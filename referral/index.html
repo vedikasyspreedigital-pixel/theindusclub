@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#05082b">
+<title>The Indus Club – Member Referral Programme 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+  body {
+    background: #04061e;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(201,168,76,0.07) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 80% 80%, rgba(15,20,80,0.6) 0%, transparent 60%);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #fff; min-height: 100vh; min-height: 100dvh;
+    display: flex; align-items: flex-start; justify-content: center;
+    padding: clamp(20px,4vw,48px) clamp(12px,3vw,24px);
+    -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  }
+
+  .card {
+    background: linear-gradient(175deg, rgba(12,17,58,0.95) 0%, rgba(5,8,35,0.98) 55%, rgba(8,12,48,0.95) 100%);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 20px; width: 100%; max-width: 700px;
+    padding: clamp(28px,6vw,56px) clamp(20px,6vw,52px) clamp(28px,5vw,48px);
+    box-shadow: 0 32px 100px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.03) inset;
+    position: relative; overflow: hidden;
+  }
+
+  /* Gold shimmer top border */
+  .card::before {
+    content: '';
+    position: absolute; top: 0; left: 10%; right: 10%; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201,168,76,0.6), rgba(232,201,106,0.9), rgba(201,168,76,0.6), transparent);
+  }
+
+  /* ── Logo area ── */
+  .logo-area {
+    display: flex; flex-direction: column; align-items: center;
+    margin-bottom: clamp(18px,3vw,28px);
+  }
+  .logo-area img {
+    width: auto; height: clamp(72px,13vw,110px);
+    object-fit: contain; margin-bottom: 14px;
+  }
+  .eyebrow {
+    font-size: clamp(8px,1.3vw,10px); font-weight: 600;
+    letter-spacing: 4px; text-transform: uppercase;
+    color: rgba(201,168,76,0.6);
+  }
+
+  /* ── Headline ── */
+  h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(28px,6vw,52px);
+    font-weight: 900; text-align: center; line-height: 1.1;
+    color: #fff; margin-bottom: 10px; letter-spacing: -0.5px;
+  }
+  h1 .amp { color: #c9a84c; font-style: italic; }
+
+  .subhead {
+    text-align: center; font-size: clamp(13px,2vw,16px);
+    font-weight: 400; color: rgba(255,255,255,0.45);
+    margin-bottom: clamp(28px,5vw,40px); letter-spacing: 0.5px;
+    font-family: 'Playfair Display', serif; font-style: italic;
+  }
+
+  /* ── Divider ── */
+  .gold-divider {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: clamp(24px,4vw,36px);
+  }
+  .gold-divider::before, .gold-divider::after {
+    content: ''; flex: 1; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3));
+  }
+  .gold-divider::after { background: linear-gradient(90deg, rgba(201,168,76,0.3), transparent); }
+  .gold-divider span { font-size: 10px; color: rgba(201,168,76,0.5); letter-spacing: 3px; text-transform: uppercase; white-space: nowrap; }
+
+  /* ── Intent Cards ── */
+  .intent-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: clamp(24px,4vw,36px); }
+  .intent-option {
+    border: 1px solid rgba(255,255,255,0.08); border-radius: 14px;
+    padding: clamp(20px,3vw,28px) clamp(16px,3vw,22px); cursor: pointer;
+    transition: border-color 0.25s, background 0.25s, box-shadow 0.25s;
+    -webkit-tap-highlight-color: transparent; touch-action: manipulation;
+    background: rgba(255,255,255,0.02);
+    display: flex; align-items: center; min-height: 90px;
+  }
+  .intent-option:hover { border-color: rgba(201,168,76,0.4); background: rgba(201,168,76,0.03); }
+  .intent-option.active {
+    border-color: rgba(201,168,76,0.55); background: rgba(201,168,76,0.06);
+    box-shadow: 0 0 24px rgba(201,168,76,0.08);
+  }
+  .intent-option label { display: flex; align-items: center; gap: 12px; cursor: pointer; width: 100%; }
+  .intent-option input[type="radio"] { display: none; }
+  .radio-dot {
+    width: 20px; height: 20px; min-width: 20px; border-radius: 50%;
+    border: 1.5px solid rgba(255,255,255,0.2); margin-top: 0;
+    transition: all 0.2s; flex-shrink: 0; position: relative;
+  }
+  .intent-option.active .radio-dot {
+    border-color: #c9a84c; background: #c9a84c;
+    box-shadow: 0 0 10px rgba(201,168,76,0.4), inset 0 0 0 4px #090d38;
+  }
+  .intent-text strong {
+    display: block; font-size: clamp(12px,1.8vw,13.5px); font-weight: 600;
+    color: rgba(255,255,255,0.85); line-height: 1.4; letter-spacing: 0.1px;
+  }
+
+  /* Contact pills inside intent card */
+  .contact-actions { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+  .contact-pill {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 11px; font-weight: 600; padding: 6px 14px;
+    border-radius: 20px; text-decoration: none;
+    transition: opacity 0.2s, transform 0.15s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .contact-pill:hover { opacity: 0.88; transform: translateY(-1px); }
+  .pill-wa { background: #25D366; color: #fff; }
+  .pill-call { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.85); border: 1px solid rgba(255,255,255,0.15); }
+
+  /* ── Section Label ── */
+  .section-label {
+    font-size: clamp(8px,1.2vw,9.5px); font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: rgba(201,168,76,0.55); margin-bottom: 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: rgba(201,168,76,0.1); }
+
+  /* ── Referral Block ── */
+  .referral-block {
+    background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px; padding: clamp(16px,3vw,24px); margin-bottom: 12px;
+    position: relative; transition: border-color 0.2s;
+  }
+  .referral-block:hover { border-color: rgba(255,255,255,0.1); }
+  .referral-num {
+    display: inline-block; font-size: 9px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; color: #c9a84c;
+    background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 4px; padding: 3px 10px; margin-bottom: 16px;
+  }
+  .remove-btn {
+    position: absolute; top: 14px; right: 14px; background: none; border: none;
+    color: rgba(255,255,255,0.18); font-size: 20px; line-height: 1; cursor: pointer;
+    padding: 4px 6px; transition: color 0.2s; -webkit-tap-highlight-color: transparent;
+    border-radius: 6px;
+  }
+  .remove-btn:hover { color: #e05c5c; background: rgba(224,92,92,0.08); }
+
+  /* ── Form Grid ── */
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+  .form-row.three { grid-template-columns: 1fr 1fr 1fr; }
+  .form-row.single { grid-template-columns: 1fr; }
+  .field { position: relative; }
+  .field label {
+    display: flex; align-items: center; gap: 4px;
+    font-size: clamp(8.5px,1.2vw,10px); font-weight: 600; letter-spacing: 1px;
+    color: rgba(255,255,255,0.35); margin-bottom: 7px; text-transform: uppercase;
+  }
+  .req { color: #c9a84c; font-size: 12px; line-height: 1; }
+  .field input, .field select {
+    width: 100%; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 9px; padding: clamp(11px,2vw,13px) 14px; font-size: clamp(13px,2vw,14px);
+    color: rgba(255,255,255,0.9); font-family: 'Inter',-apple-system,sans-serif; outline: none;
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+    -webkit-appearance: none; appearance: none;
+  }
+  .field select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='rgba(255,255,255,0.3)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; cursor: pointer;
+  }
+  .field select option { background: #0c1040; color: #fff; }
+  .field input::placeholder { color: rgba(255,255,255,0.18); }
+  .field input:focus, .field select:focus {
+    border-color: rgba(201,168,76,0.5); background: rgba(201,168,76,0.03);
+    box-shadow: 0 0 0 3px rgba(201,168,76,0.06);
+  }
+  .field input.is-error { border-color: rgba(224,92,92,0.6) !important; background: rgba(224,92,92,0.04) !important; }
+  .err-msg { font-size: 10px; color: #e05c5c; margin-top: 5px; display: none; line-height: 1.4; }
+  .err-msg.show { display: block; }
+
+  /* Phone wrap */
+  .phone-wrap { display: flex; gap: 10px; align-items: flex-start; }
+  .phone-wrap .field-cc { flex: 0 0 150px; }
+  .phone-wrap .field-num { flex: 1; }
+
+  /* ── Add Referral ── */
+  .add-btn {
+    width: 100%; background: none;
+    border: 1px dashed rgba(201,168,76,0.2);
+    border-radius: 12px; color: rgba(201,168,76,0.45);
+    font-family: 'Inter',-apple-system,sans-serif; font-size: 13px;
+    font-weight: 500; padding: 14px; cursor: pointer;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+    margin-bottom: clamp(20px,4vw,32px); margin-top: 6px;
+    -webkit-tap-highlight-color: transparent; touch-action: manipulation;
+    letter-spacing: 0.3px;
+  }
+  .add-btn:hover { border-color: rgba(201,168,76,0.5); color: #c9a84c; background: rgba(201,168,76,0.04); }
+
+  /* ── Contact Section ── */
+  #contact-section { display: none; }
+
+  .connect-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
+  .connect-btn {
+    flex: 1; min-width: 160px; display: flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 14px 20px; border-radius: 12px; font-size: 14px; font-weight: 600;
+    text-decoration: none; transition: opacity 0.2s, transform 0.15s;
+    -webkit-tap-highlight-color: transparent; letter-spacing: 0.2px;
+  }
+  .connect-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+  .btn-wa { background: linear-gradient(135deg, #25D366, #1fad54); color: #fff; }
+  .btn-call { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.85); border: 1px solid rgba(255,255,255,0.12); }
+
+  /* ── Submit ── */
+  .submit-wrap { display: flex; justify-content: center; margin-top: clamp(8px,2vw,16px); }
+  .submit-btn {
+    background: linear-gradient(135deg, #c9a84c 0%, #e8c96a 50%, #c9a84c 100%);
+    background-size: 200% auto;
+    color: #04061e; border: none; border-radius: 10px;
+    padding: clamp(11px,2vw,13px) clamp(28px,5vw,48px);
+    font-family: 'Inter',-apple-system,sans-serif; font-size: clamp(12px,1.6vw,13px);
+    font-weight: 700; cursor: pointer; letter-spacing: 1px; text-transform: uppercase;
+    transition: background-position 0.4s, transform 0.15s, box-shadow 0.2s;
+    -webkit-tap-highlight-color: transparent; -webkit-appearance: none;
+    box-shadow: 0 4px 24px rgba(201,168,76,0.25);
+  }
+  .submit-btn:hover {
+    background-position: right center;
+    box-shadow: 0 6px 32px rgba(201,168,76,0.4); transform: translateY(-1px);
+  }
+  .submit-btn:active { transform: scale(0.98); }
+  .submit-btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none !important; box-shadow: none; }
+
+  /* ── Toast ── */
+  #toast {
+    display: none; position: fixed; bottom: clamp(20px,5vw,36px); left: 50%;
+    transform: translateX(-50%); font-weight: 600; font-size: clamp(12px,2vw,13px);
+    padding: 13px 28px; border-radius: 50px; box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+    z-index: 9999; white-space: nowrap; letter-spacing: 0.3px;
+  }
+  #toast.success { background: linear-gradient(135deg,#1fad54,#25D366); color: #fff; }
+  #toast.error-toast { background: #c0392b; color: #fff; }
+
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    .intent-row { grid-template-columns: 1fr; }
+    .form-row.three { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 480px) {
+    .form-row, .form-row.three { grid-template-columns: 1fr; }
+    .phone-wrap { flex-direction: column; }
+    .phone-wrap .field-cc { flex: none; width: 100%; }
+    .connect-btn { flex: none; width: 100%; }
+  }
+  @media (max-width: 360px) { .card { padding: 20px 16px; } h1 { font-size: 26px; } }
+  @media (min-width: 1200px) { body { padding: 56px 24px; } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+</style>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MFBFBSMD');</script>
+<!-- End Google Tag Manager -->
+</head>
+
+<body>
+<div class="card">
+
+  <!-- Logo + Eyebrow -->
+  <div class="logo-area">
+    <img src="/assets/img/refform.png" alt="The Indus Club">
+    <p class="eyebrow">Member Referral Programme 2026</p>
+  </div>
+
+  <!-- Headline -->
+  <h1>Refer <span class="amp">&</span> Receive</h1>
+  <p class="subhead">Extraordinary Rewards</p>
+
+ 
+  <!-- Intent -->
+  <div class="intent-row">
+    <div class="intent-option active" id="opt-refer" onclick="selectIntent('refer')">
+      <label>
+        <input type="radio" name="intent" value="refer" checked>
+        <div class="radio-dot"></div>
+        <div class="intent-text">
+          <strong>I would like to refer someone</strong>
+        </div>
+      </label>
+    </div>
+    <div class="intent-option" id="opt-contact" onclick="selectIntent('contact')">
+      <label>
+        <input type="radio" name="intent" value="contact">
+        <div class="radio-dot"></div>
+        <div class="intent-text">
+          <strong>I would like to be contacted by the Membership Manager</strong>
+        </div>
+      </label>
+    </div>
+  </div>
+
+  <!-- Referral Section -->
+  <div id="referral-section">
+    <p class="section-label">Referral Details</p>
+    <div id="referrals-container"></div>
+    <button class="add-btn" type="button" onclick="addReferral()">+ Add Another Referral</button>
+  </div>
+
+  <!-- Contact Section -->
+  <div id="contact-section">
+    <div class="connect-btns">
+      <a class="connect-btn btn-wa" href="https://wa.me/919967445759?text=Hi%2C%20I%27m%20an%20Indus%20Club%20member%20and%20I%27d%20like%20to%20discuss%20a%20referral." target="_blank">💬 Connect on WhatsApp</a>
+      <a class="connect-btn btn-call" href="tel:+919967445759">📞 Connect on Call</a>
+    </div>
+    <div class="form-row">
+      <div class="field">
+        <label>Your Name <span class="req">*</span></label>
+        <input type="text" id="cm-name" placeholder="Full name" autocomplete="name">
+        <div class="err-msg" id="err-cm-name">Please enter your name</div>
+      </div>
+      <div class="field">
+        <label>Mobile Number <span class="req">*</span></label>
+        <input type="tel" id="cm-phone" placeholder="e.g. 9876543210" autocomplete="tel" maxlength="15" inputmode="numeric" onblur="autoCleanPhone(this)">
+        <div class="err-msg" id="err-cm-phone">Please enter your mobile number</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Submit -->
+  <div class="submit-wrap">
+    <button type="button" class="submit-btn" id="submitBtn" onclick="handleSubmit()">Submit Referral</button>
+  </div>
+
+</div>
+
+<div id="toast"></div>
+<iframe name="zoho_iframe" style="display:none;width:0;height:0;border:0;"></iframe>
+
+<script>
+var COUNTRY_CODES = [
+  {c:'IN',n:'India',d:'+91',pat:/^[6-9]\d{9}$/},
+  {c:'US',n:'USA',d:'+1',pat:/^\d{10}$/},
+  {c:'GB',n:'UK',d:'+44',pat:/^\d{10}$/},
+  {c:'AE',n:'UAE',d:'+971',pat:/^[0-9]\d{8}$/},
+  {c:'SG',n:'Singapore',d:'+65',pat:/^[689]\d{7}$/},
+  {c:'AU',n:'Australia',d:'+61',pat:/^[2-9]\d{8}$/},
+  {c:'CA',n:'Canada',d:'+1',pat:/^\d{10}$/},
+  {c:'DE',n:'Germany',d:'+49',pat:/^\d{10,11}$/},
+  {c:'FR',n:'France',d:'+33',pat:/^\d{9}$/},
+  {c:'SA',n:'Saudi Arabia',d:'+966',pat:/^[0-9]\d{8}$/},
+  {c:'QA',n:'Qatar',d:'+974',pat:/^[3-9]\d{7}$/},
+  {c:'KW',n:'Kuwait',d:'+965',pat:/^[0-9]\d{7}$/},
+  {c:'MY',n:'Malaysia',d:'+60',pat:/^[0-9]\d{8}$/},
+  {c:'NZ',n:'New Zealand',d:'+64',pat:/^[0-9]\d{8}$/},
+  {c:'ZA',n:'South Africa',d:'+27',pat:/^[0-9]\d{8}$/},
+];
+
+function ccSelectHTML(id) {
+  return '<select id="cc-'+id+'" style="width:100%;">' +
+    COUNTRY_CODES.map(function(cc){
+      return '<option value="'+cc.d+'"'+(cc.c==='IN'?' selected':'')+'>'+cc.n+' ('+cc.d+')</option>';
+    }).join('') + '</select>';
+}
+
+function isValidIntlPhone(ccId, numId) {
+  var sel=document.getElementById(ccId), num=document.getElementById(numId);
+  if (!sel||!num) return false;
+  var clean=num.value.replace(/[\s\-\(\)]/g,'');
+  var cc=COUNTRY_CODES.find(function(c){return c.d===sel.value;})||COUNTRY_CODES[0];
+  return cc.pat.test(clean);
+}
+
+var ZOHO_ACTION    = 'https://crm.zoho.com/crm/WebToLeadForm';
+var ZOHO_XNQSJSDP = '4633e10ab6b642d7a4e368f1c7b472c0eb6ec474405b9f0de11e073908983707';
+var ZOHO_XMIWTLD  = '54f49544810db04a5f2b937d80f6f9c92f74cf59512a5495caf09289e5ea32f88e0b4ddf9e651ceba634e6574df529a5';
+var MEMBERSHIP_PHONE = '919967445759';
+var refCount=0, intent='refer', submitting=false;
+var memberName = ''; // captured once from first block
+
+function addReferral() {
+  refCount++;
+  var n=refCount, isFirst=(n===1);
+  var container=document.getElementById('referrals-container');
+  var div=document.createElement('div');
+  div.className='referral-block'; div.id='refblock-'+n;
+  div.innerHTML=
+    '<span class="referral-num">Referral '+n+'</span>'+
+    (n>1?'<button class="remove-btn" type="button" onclick="removeReferral('+n+')" title="Remove">×</button>':'')+
+    '<div class="form-row">'+
+      fld('First Name','firstName'+n,'text','e.g. Rahul',true)+
+      fld('Last Name','lastName'+n,'text','e.g. Mehta',true)+
+    '</div>'+
+    '<div class="form-row">'+
+      fld('Company Name','company'+n,'text','e.g. Mehta Enterprises',true)+
+      fld('Designation','desig'+n,'text','e.g. Managing Director',false)+
+    '</div>'+
+    '<div class="form-row single">'+
+      '<div class="field"><label>Mobile Number <span class="req">*</span></label>'+
+      '<div class="phone-wrap">'+
+        '<div class="field-cc"><div class="field">'+ccSelectHTML('mob'+n)+'</div></div>'+
+        '<div class="field-num">'+
+          '<input type="tel" id="mobile'+n+'" placeholder="e.g. 9876543210" autocomplete="off" maxlength="15" inputmode="numeric">'+
+          '<div class="err-msg" id="err-mobile'+n+'">Enter a valid mobile number</div>'+
+        '</div>'+
+      '</div></div>'+
+    '</div>'+
+    '<div class="form-row">'+
+      fld('Email Address','email'+n,'email','email@company.com',false)+
+      (isFirst ? fld('Your Name (Member)','refby','text','Your name',true) : '')+
+    '</div>';
+  container.appendChild(div);
+}
+
+function fld(label,id,type,ph,required){
+  var req=required?'<span class="req">*</span>':'';
+  return '<div class="field">'+
+    '<label>'+label+' '+req+'</label>'+
+    '<input type="'+type+'" id="'+id+'" placeholder="'+ph+'" autocomplete="off">'+
+    (required?'<div class="err-msg" id="err-'+id+'">'+label+' is required</div>':'')+
+  '</div>';
+}
+
+function removeReferral(n){var el=document.getElementById('refblock-'+n);if(el)el.remove();}
+
+function selectIntent(type){
+  intent=type;
+  document.getElementById('opt-refer').classList.toggle('active',type==='refer');
+  document.getElementById('opt-contact').classList.toggle('active',type==='contact');
+  document.getElementById('referral-section').style.display=type==='refer'?'block':'none';
+  document.getElementById('contact-section').style.display=type==='contact'?'block':'none';
+}
+
+function cleanPhone(v){
+  var c=v.replace(/[\s\-\+\(\)]/g,'');
+  if(c.length===12&&c.startsWith('91'))c=c.slice(2);
+  if(c.length===11&&c.startsWith('0'))c=c.slice(1);
+  return c;
+}
+function autoCleanPhone(el){var c=cleanPhone(el.value);if(c.length>0)el.value=c;}
+
+function setErr(id,show,msg){
+  var inp=document.getElementById(id),err=document.getElementById('err-'+id);
+  if(!inp)return;
+  if(show){inp.classList.add('is-error');if(err){if(msg)err.textContent=msg;err.classList.add('show');}}
+  else{inp.classList.remove('is-error');if(err)err.classList.remove('show');}
+}
+function val(id){var el=document.getElementById(id);return el?el.value.trim():'';}
+
+function showToast(msg,type){
+  var t=document.getElementById('toast');
+  t.textContent=msg;t.className=type==='success'?'success':'error-toast';
+  t.style.display='block';
+  setTimeout(function(){t.style.display='none';},4000);
+}
+
+function submitToZoho(data){
+  var form=document.createElement('form');
+  form.method='POST';form.action=ZOHO_ACTION;form.target='zoho_iframe';form.style.display='none';
+  var payload={
+    'xnQsjsdp':ZOHO_XNQSJSDP,'xmIwtLD':ZOHO_XMIWTLD,'actionType':'TGVhZHM=',
+    'zc_gad':'','aG9uZXlwb3Q':'',
+    'First Name':data.firstName||'','Last Name':data.lastName||'',
+    'Company':data.company||'','Mobile':data.mobile||'','Email':data.email||'',
+    'Title':data.desig||'','Designation':data.desig||'',
+    'LEADCF35':data.referredBy||'',
+    'Lead Status':'No Contact Initiated','LEADCF36':'Cold',
+    'LEADCF26':data.source||'Referral',
+    'Lead_Type':data.leadType||'Member Referral',
+    'returnURL':''
+  };
+  Object.keys(payload).forEach(function(k){
+    var i=document.createElement('input');i.type='hidden';i.name=k;i.value=payload[k];
+    form.appendChild(i);
+  });
+  document.body.appendChild(form);form.submit();
+  setTimeout(function(){document.body.removeChild(form);},2000);
+}
+
+function handleSubmit(){
+  if(submitting)return;
+
+  if(intent==='contact'){
+    var cname=val('cm-name'),cphone=val('cm-phone'),ok=true;
+    if(!cname){setErr('cm-name',true);ok=false;}else{setErr('cm-name',false);}
+    if(!cphone||cphone.length<7){setErr('cm-phone',true);ok=false;}else{setErr('cm-phone',false);}
+    if(!ok){showToast('Please fill in all required fields','error');return;}
+    lockBtn(true);
+    submitToZoho({
+      firstName:cname.split(' ')[0],
+      lastName:cname.split(' ').slice(1).join(' ')||'-',
+      mobile:cleanPhone(cphone),
+      company:'N/A',email:'',desig:'',
+      referredBy:'Contact Request via Form',
+      source:'Referral',leadType:'Contact Request'
+    });
+    window.location.href='https://theindusclub.com/referral/referral-thankyou.html?type=contact';
+    return;
+  }
+
+  /* Referral flow */
+  var blocks=document.querySelectorAll('.referral-block');
+  if(blocks.length===0){showToast('Please add at least one referral','error');return;}
+
+  /* Get member name from first block only */
+  var globalMemberName=val('refby');
+  if(!globalMemberName){setErr('refby',true);showToast('Please enter your name','error');return;}
+  else{setErr('refby',false);}
+
+  var leads=[],hasErr=false;
+  blocks.forEach(function(block){
+    var n=block.id.replace('refblock-','');
+    var fn=val('firstName'+n),ln=val('lastName'+n),co=val('company'+n);
+    var mob=val('mobile'+n),em=val('email'+n),dg=val('desig'+n);
+    var ccId='cc-mob'+n;
+
+    if(!fn){setErr('firstName'+n,true);hasErr=true;}else{setErr('firstName'+n,false);}
+    if(!ln){setErr('lastName'+n,true);hasErr=true;}else{setErr('lastName'+n,false);}
+    if(!co){setErr('company'+n,true);hasErr=true;}else{setErr('company'+n,false);}
+
+    var phoneOk=isValidIntlPhone(ccId,'mobile'+n);
+    if(!phoneOk){setErr('mobile'+n,true,'Enter a valid mobile number');hasErr=true;}
+    else{setErr('mobile'+n,false);}
+
+    if(fn&&ln&&co&&phoneOk){
+      var ccSel=document.getElementById(ccId);
+      var dialCode=ccSel?ccSel.value:'+91';
+      leads.push({firstName:fn,lastName:ln,company:co,mobile:dialCode+mob,email:em,desig:dg,referredBy:globalMemberName,source:'Referral',leadType:'Member Referral'});
+    }
+  });
+
+  if(hasErr){showToast('Please fix the highlighted fields','error');return;}
+  if(leads.length===0){showToast('No valid referrals to submit','error');return;}
+
+  lockBtn(true);
+  var i=0;
+  function next(){
+    if(i<leads.length){submitToZoho(leads[i]);i++;setTimeout(next,900);}
+    else{window.location.href='https://theindusclub.com/referral/referral-thankyou.html?type=refer';}
+  }
+  next();
+}
+
+function lockBtn(lock){
+  submitting=lock;
+  var btn=document.getElementById('submitBtn');
+  btn.disabled=lock;btn.textContent=lock?'Submitting…':'Submit Referral';
+}
+
+addReferral();
+</script>
+</body>
+</html>

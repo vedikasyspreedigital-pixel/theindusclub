@@ -1,0 +1,256 @@
+@font-face {
+    font-family: "Walburn-Regular";
+    src: url("../fonts/Walburn Regular.ttf");
+}
+@font-face {
+    font-family: "Walburn-Bold";
+    src: url("../fonts/Walburn Bold.ttf");
+}
+@font-face {
+    font-family: "Myriad-Pro-Regular";
+    src: url("../fonts/Myriad Pro Regular.ttf");
+}
+@font-face {
+    font-family: "Gotham-Medium";
+    src: url("../fonts/Gotham-Medium.otf");
+}
+@font-face {
+    font-family: "Bebas";
+    src: url("../fonts/BEBAS.otf");
+}
+html, body {margin: 0; height: 100%; /*overflow: hidden*/}
+.container{
+  padding:0;
+}
+/*.sub-main{
+  width: 1200px;
+  margin: 0 auto;
+}*/
+.containers{
+  width: 100%;
+  float: left;
+}
+#main{
+  width: 100%;
+  float: left;
+  overflow:hidden;
+  position:relative;
+  background-image: url(../images/bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+}
+.logo img{
+  margin: 0px auto;
+  padding: 35px 0px 73px;
+  max-width:250px;
+}
+header .col-sm-12{
+    /*background-image: url(../images/menu_icon.png);
+    background-repeat: no-repeat;
+    background-position: 96% 25%;*/
+}
+.inner {
+    padding: 0px 40px 0px;
+    width: 100%;
+    float: left;
+}
+.banner{
+    padding: 35px 30px 35px;
+    border: 2px solid #0000;
+    border-image: linear-gradient(to bottom right, #715524 0%, #f4dc61 100%);
+    border-image-slice: 1;
+    width: 100%;
+    float: left;
+}
+.banner img{
+  width: 100%;
+}
+.welcome{
+    color: #9F865E;
+    padding: 0px 45px 14px 20px;
+}
+.welcome h1 {
+    color: #fff;
+    background: linear-gradient(to bottom right, #715524 0%, #f4dc61 100%);
+    background: -webkit-linear-gradient(to bottom right, #715524 0%, #f4dc61 100%);
+    background: -moz-linear-gradient(to bottom right, #715524 0%, #f4dc61 100%);
+    background: -ms-linear-gradient(top, #0C93C0, #FFF);
+    background: -o-linear-gradient(to bottom right, #715524 0%, #f4dc61 100%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -ms-background-clip: text;
+    -o-background-clip: text;
+    -webkit-text-fill-color: #0000;
+    -moz-text-fill-color: transparent;
+    -ms-text-fill-color: transparent;
+    -o-text-fill-color: transparent;
+    background-size: cover;
+    text-transform: uppercase;
+    font-family: "Walburn-Regular";
+    font-size: 37px;
+    line-height: 40px;
+    margin-bottom: 20px;
+    text-align:left;
+}
+.welcome p{
+    font-family: "Walburn-Regular";
+    font-size: 2rem;
+    line-height: 3rem;
+    margin: auto;
+}
+
+.no-padding {
+    padding: 0px !important;
+}
+.txt-italic{
+  font-style: italic;
+  margin-top:15px !important;
+}
+.banner .col-sm-12 {
+    background: #242e49;
+}
+footer{
+  margin-top: 80px;
+  background-color: #242e49;
+  padding:50px 0px 0px;
+}
+.footer_menu{
+  display: inline-block;
+  width: 100%;
+  float: left;
+  border-bottom: 1px solid #656e8b;
+  padding-bottom: 30px;
+}
+.footer_menu li{
+  display: inline-block;
+}
+.footer_menu li a{
+    padding:0px 42px 0px;
+    font-family: "Walburn-Regular";
+    font-size: 14px;
+    line-height: 17px;
+    color:#fff;
+    text-transform: uppercase;
+}
+.footer_menu li a:hover {
+    color: #ffb845;
+    transition: 0.3s;
+    text-decoration: none;
+}
+.fooetr-bottom {
+    width: 100%;
+    float: left;
+    text-align: center;
+}
+.bottom{
+  padding: 25px 0px 25px;
+}
+.fooetr-bottom p{
+  font-family: "Walburn-Bold";
+  font-size: 13px;
+  line-height: 16px;
+  color:#fff;
+  text-transform: uppercase;
+  text-align: right;
+  letter-spacing: 1px;
+}
+.fooetr-bottom img {
+    display: inline-block;
+    padding-right: 20px;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f1;
+}
+
+#regForm {
+  background-color: transparent;
+  font-family: "Walburn-Regular";
+  margin-top: 10px;
+  min-width: 300px;
+}
+
+h1 {
+  text-align: center;  
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+  text-align: center;
+}
+.tab p{
+font-size: 16px;
+    line-height: 22px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 16px;
+}
+
+button {
+  background-color: #fff;
+  color: #ef970a !important;
+  border: none;
+  padding: 7px 15px;
+  font-size: 17px;
+  cursor: pointer;
+  font-size: 13px!important;
+  font-family:'Montserrat', sans-serif!important;
+  margin-top:10px !important;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#prevBtn {
+  background-color: #bbbbbb;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+  display: none;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #4CAF50;
+}
+.google_review{
+  background-color:#ef970a;
+  color: #fff!important; 
+  margin-top:10px;
+  padding:7px 30px;
+}
+.review{
+      text-align: center;
+      display:none;
+}

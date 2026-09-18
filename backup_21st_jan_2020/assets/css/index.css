@@ -1,0 +1,196 @@
+body{
+    background: #0e1d39;
+}
+.no-webp body::before {
+    content: "";
+    background: url(../img/body-bg__Riviera.jpg) no-repeat fixed;
+    -webkit-background-size: cover; 
+    -moz-background-size: cover; 
+    -o-background-size: cover; 
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;   
+}
+.webp body::before {
+    content: "";
+    background: url(../img/body-bg__Riviera.webp) no-repeat fixed;
+    -webkit-background-size: cover; 
+    -moz-background-size: cover; 
+    -o-background-size: cover; 
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;   
+}
+.right-design {
+    position: absolute;
+    right: 0px;
+    top: 20%;
+    z-index: -1;
+}
+
+section {
+    min-height: 97vh;
+}
+.img-logo {
+    height: 100px;
+    margin: 0 auto 20px auto;
+}
+article {
+    margin: 0 0px;
+    margin-bottom: 2rem;
+}
+.banner-container {
+    margin: 30px;
+    background: #f6f1ed;
+    box-shadow: 0px 0px 30px 5px rgba(74, 74, 74, 0.25);
+}
+.banner-details {
+    color: #9F865E;
+    padding: 1.5rem 20px!important;
+}
+.banner-details h2{
+    font-size: 36px;
+}
+.banner-details p {
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    margin: auto;
+    margin-bottom: 10px;
+    font-family: 'Walburn-Italic-2';
+}
+.index__wb-footer{
+    position: absolute;
+    bottom: 0px;
+    left:0px;
+    width:100%;
+}
+wb-footer #return-to-bottom{
+    display: none !important;   
+}
+.about-txt p {
+    color: #9F865E;
+    font-size: 1.8rem;
+    line-height: 3rem;
+    margin: auto;
+}
+.about-txt {
+    padding: 0rem 12rem;
+}
+@media only screen and (min-device-width: 375px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .index__wb-footer{
+        position: relative;
+    }
+}
+@media only screen and (max-width: 425px) and (orientation:portrait) {
+    .title-container p {
+        font-size: 10px;
+    }
+    article {
+        margin: 30px 0;
+    }
+    .banner-container {
+        margin: 15px;
+    }
+    .img-logo {
+        height: 80px;
+    }
+    .banner-details {
+        text-align: center;
+        padding: 10px 30px !important;
+    }
+    .banner-details h1,
+    .banner-details h2{
+        font-size: 2rem !important;
+    }
+    .banner-details p {
+        font-size: 1.6rem;
+        line-height: 2rem;
+    }
+    .right-design,
+    .left-design,
+    .right-design1,
+    .left-design1 {
+        height: 18rem;
+    }
+    .about-txt {
+        padding: 0rem 2rem !important;
+    }
+    .about-txt p {
+        font-size: 1.6rem;
+        line-height: 2rem;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    .index__wb-footer{
+        position: relative;
+    }
+    .about-txt {
+        padding: 1rem 5rem;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .banner-details{
+        text-align: center;
+    }
+}
+@media only screen and (min-width: 1450px) {
+    article {
+        margin: 3rem 60px;
+        margin-bottom: 2rem;
+    }
+}
+@media only screen and (min-width: 1780px) {
+    .img-logo {
+        height: 150px;
+    }
+    .container-banner {
+        width: 75%;
+    }
+    .banner-details h2,
+    .banner-details h1{
+        font-size: 4.5rem;
+    }
+    .banner-details {
+        color: #9F865E;
+        padding: 0px 20px 0px 20px !important;
+        margin: 0rem 0px 0px;
+        margin: 0rem 0px 0px;
+    }
+    .banner-details p {
+        font-size: 2.2rem;
+        line-height: 3.5rem;
+        margin: 20px 0;
+    }
+}
+@media only screen and (min-width: 2000px) {
+    .banner-details {
+        margin: 3% 0px 0px;
+    }
+    .banner-details p {
+        line-height: 3.5rem;
+    }
+}
+@media only screen and (min-width: 2300px) {
+    .banner-details {
+        margin: 2rem 0px 0px;
+    }
+    .banner-details {
+        color: #9F865E;
+        padding: 0px 50px 0px 20px !important;
+    }
+}

@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Membership Registration</title>
+
+<style>
+
+.full{
+grid-column:1 / 3;
+width:100%;
+}
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:transparent;
+display:flex;
+justify-content:center;
+align-items:flex-start;
+min-height:100vh;
+padding:40px 20px;
+box-sizing:border-box;
+}
+
+/* CARD */
+
+.form-container{
+width:680px;
+max-width:90%;
+background:white;
+padding:50px 60px;
+border-radius:6px;
+box-shadow:0 25px 60px rgba(0,0,0,0.25);
+position:relative;
+overflow:visible;
+}
+
+/* CLOSE BUTTON */
+
+.close-btn{
+position:absolute;
+top:15px;
+right:20px;
+font-size:22px;
+color:#777;
+cursor:pointer;
+}
+
+/* LOGO */
+
+.form-logo{
+text-align:center;
+margin-bottom:15px;
+}
+
+.form-logo img{
+max-height:80px;
+width:auto;
+display:block;
+margin:0 auto;
+}
+
+/* DESCRIPTION */
+
+.form-description{
+text-align:center;
+font-size:14px;
+color:#9F865E;
+line-height:1.6;
+margin:0px 0px 25px;
+font-weight:bold;
+font-family:'Walburn-Regular-2';
+max-width:628px;
+margin-left:auto;
+margin-right:auto;
+}
+
+/* GRID */
+
+.form-grid{
+display:grid;
+grid-template-columns:46% 46%;
+justify-content:space-between;
+row-gap:22px;
+margin-top:40px;
+width:100%;
+}
+
+/* INPUTS */
+
+.form-grid input,
+.form-grid select{
+width:100%;
+padding:12px 14px;
+border:1px solid #cfcfcf;
+border-radius:0;
+font-size:14px;
+outline:none;
+background:transparent;
+color:#444;
+}
+
+.form-grid input:hover,
+.form-grid select:hover{
+border-color:#c5a880;
+background:#fff;
+}
+
+.form-grid input:focus,
+.form-grid select:focus{
+border-color:#cfcfcf;
+background:transparent;
+box-shadow:none;
+}
+
+.full{
+grid-column:1 / 3;
+}
+
+/* BUTTON */
+
+.submit-btn{
+margin-top:25px;
+background:#C8b38a;
+border:none;
+padding:10px 42px;
+color:white;
+font-size:12px;
+letter-spacing:3px;
+cursor:pointer;
+display:block;
+margin-left:auto;
+margin-right:auto;
+}
+
+.submit-btn:hover{
+background:#b4976e;
+transform:translateY(-2px);
+box-shadow:0 6px 20px rgba(0,0,0,0.15);
+}
+
+
+@media (max-width:768px){
+
+.form-container{
+padding:35px 25px;
+}
+
+.form-grid{
+grid-template-columns:100%;
+}
+
+.full{
+grid-column:auto;
+}
+
+.form-logo img{
+max-height:180px;
+}
+
+}
+
+
+</style>
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MFBFBSMD');</script>
+<!-- End Google Tag Manager -->
+</head>
+
+
+<body>
+
+<div class="form-container">
+
+<div class="close-btn" onclick="window.history.back()">×</div>
+
+
+<div class="form-logo">
+<img src="assets/img/logo-small.png">
+</div>
+
+<div class="form-description">
+The Indus Club membership is strictly by invitation or member referral,
+extended to newsmakers, leaders and legends; at the sole discretion of the
+Membership Committee. We welcome interest from persons that believe they
+belong to this unique fellowship and will respond promptly to inquiries.
+</div>
+
+<form id="webform2196827000110119001"
+action="https://crm.zoho.com/crm/WebForm"
+method="POST"
+accept-charset="UTF-8">
+
+<input type="hidden" name="xnQsjsdp" value="967891ec8b10b4485f6d55873ee2f6de6da8e060e80b407125ce2ce444b2a234">
+<input type="hidden" name="xmIwtLD" value="8bfa6ad0983e88f4cc0e62dbd8312b1cce95d2a866426f97e6b48d53273b6433c35c82a82c9a9e0a2c085772c965dec3">
+<input type="hidden" name="actionType" value="Q3VzdG9tTW9kdWxlNQ==">
+<input type="hidden" name="returnURL" value="https://www.theindusclub.com/thankyou.php">
+<input type="hidden" name="zc_gad" id="zc_gad">
+
+<input type="hidden" id="NAME" name="NAME">
+<input type="hidden" id="lastname" name="COBJ5CF16">
+<input type="hidden" name="aG9uZXlwb3Q" value="">
+
+<div class="form-grid">
+
+<input type="text" id="fullname" name="COBJ5CF1" placeholder="Name*" required>
+
+<input type="text" name="COBJ5CF19" placeholder="Company Name*" required>
+
+<input type="text" name="COBJ5CF27" placeholder="City*" required>
+
+<select name="Age" required>
+<option selected disabled value="">Age*</option>
+<option value="25-34">25-34</option>
+<option value="35-44">35-44</option>
+<option value="45-54">45-54</option>
+<option value="55+">55+</option>
+</select>
+
+<select name="COBJ5CF9" class="full" required>
+<option selected disabled value="">Designation*</option>
+<option value="Promoter/Founder">Promoter/Founder/Co-Founder</option>
+<option value="Chairman/Managing Director">MD/Chairman/CEO</option>
+<option value="COO/President">COO/President</option>
+<option value="CFO/Finance Director">CFO/Finance Director</option>
+<option value="CHRO/HR Director">CHRO/HR Director</option>
+<option value="Diplomat">Diplomat</option>
+<option value="Artist/Author">Artist/Author</option>
+<option value="Sportsperson">Sportsperson</option>
+<option value="Filmmaker">Filmmaker</option>
+<option value="Other">Other</option>
+</select>
+
+<select name="COBJ5CF37" class="full" required>
+<option selected disabled value="">How Did You Learn About Us?</option>
+<option value="Friends/Family">Friends/Family</option>
+<option value="Colleagues/Associates">Colleagues/Associates</option>
+<option value="Media">Media</option>
+<option value="Social Media">Social Media</option>
+<option value="Online Search">Online Search</option>
+<option value="Other">Other</option>
+</select>
+
+<input type="text" name="COBJ5CF154" placeholder="Mobile*" required>
+
+<input type="email" name="Email" placeholder="Email*" required>
+
+</div>
+
+<button class="submit-btn" type="submit">
+SUBMIT
+</button>
+
+</form>
+
+</div>
+
+<script>
+
+document.getElementById("webform2196827000110119001").onsubmit = function(){
+
+var fullname = document.getElementById("fullname").value.trim();
+
+var parts = fullname.split(" ");
+
+var first = parts[0];
+var last = "";
+
+if(parts.length > 1){
+last = parts.slice(1).join(" ");
+
+sessionStorage.setItem("panelSubmitted","true");
+
+}
+
+document.getElementById("NAME").value = fullname;
+document.querySelector("input[name='COBJ5CF1']").value = first;
+document.getElementById("lastname").value = last;
+
+}
+
+</script>
+
+
+</body>
+</html>

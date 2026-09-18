@@ -1,0 +1,709 @@
+<link href="//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" rel="stylesheet" />
+<style>
+    .item {
+        margin: auto;
+    }
+    header {
+        position: absolute;
+        width: 100%;
+    }
+    /* Icon 1 */
+    #nav-icon1 {
+        width: 35px;
+        height: 20px;
+        position: fixed;
+        /*    margin: 10px 20px;*/
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .5s ease-in-out;
+        -moz-transition: .5s ease-in-out;
+        -o-transition: .5s ease-in-out;
+        transition: .5s ease-in-out;
+        cursor: pointer;
+        float: right;
+        z-index: 101;
+        right: 20px;
+        top: 40px;
+    }
+    #nav-icon1 span {
+        display: block;
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background: #826a24;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .25s ease-in-out;
+        -moz-transition: .25s ease-in-out;
+        -o-transition: .25s ease-in-out;
+        transition: .25s ease-in-out;
+    }
+    #nav-icon1 span:nth-child(1) {
+        top: 0px;
+    }
+    #nav-icon1 span:nth-child(2) {
+        top: 8px;
+    }
+    #nav-icon1 span:nth-child(3) {
+        top: 16px;
+    }
+    #nav-icon1.open span:nth-child(1) {
+        top: 8px;
+        -webkit-transform: rotate(135deg);
+        -moz-transform: rotate(135deg);
+        -o-transform: rotate(135deg);
+        transform: rotate(135deg);
+    }
+    #nav-icon1.open span:nth-child(2) {
+        opacity: 0;
+        left: -60px;
+    }
+    #nav-icon1.open span:nth-child(3) {
+        top: 8px;
+        left: 0px;
+        width: 35px;
+        -webkit-transform: rotate(-135deg);
+        -moz-transform: rotate(-135deg);
+        -o-transform: rotate(-135deg);
+        transform: rotate(-135deg);
+    }
+    #menu-container {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        text-align: center;
+        background: #f4f1ec;
+        background: #0e1d39;
+        display: none;
+    }
+    #menu-container::after {
+        content: "";
+        background: url(./assets/img/body-bg__Riviera.jpg) no-repeat fixed;
+        -webkit-background-size: cover; 
+        -moz-background-size: cover; 
+        -o-background-size: cover; 
+        background-size: cover;
+        background-position: center;
+        opacity: 0.1;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: fixed;
+        z-index: -1;   
+    }
+    .menu_img-logo {
+        height: 100px;
+        margin: 20px auto;
+    }
+    .menu-nav {
+        text-align: center;
+        margin: 20px 5px ;
+    }
+    .menu-nav li {
+        display: inline;
+        text-align: center;
+        cursor: pointer;
+        letter-spacing: 1.5px;
+        padding: 0 1.2rem;
+        font-size: 1.4rem;
+        color: #9F865E;
+        color: #f6f1ed;
+        text-transform: uppercase;
+    }
+    .selected {
+        text-decoration: underline;
+    }
+    .quote-menu li {
+        font-size: 12px;
+        padding: 0 1.5rem;
+    }
+    .quote-menu li a {
+        color: #99856d;
+    }
+    header .btn-block {
+        margin: 25px 0 ;
+    }
+    header .explore-btn {
+        color: #99856d;
+        background: transparent;
+        border: 1px solid #99856d;
+        padding: 0.7rem 2.5rem;
+        font-size: 1.2rem;
+        letter-spacing: 3px;
+    }
+    header .item .figure{
+        padding: 20px;
+    }
+    header .txt-menu__title {
+        font-size: 24px;
+        margin: 0 0 10px;
+        /*        text-decoration: underline;*/
+    }
+    #mobile{
+        display: none;
+    }
+    .prev-btn,
+    .nxt-btn{
+        color: #fff; 
+        font-size: 3rem;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .prev-btn{
+        position: absolute;
+        z-index:2;
+        top:40%;
+        left:24%;
+    }
+    .nxt-btn{
+        position: absolute;
+        z-index:2;
+        top:40%;
+        right:24%;
+    }
+    .prev-btn:hover,
+    .nxt-btn:hover{
+    }
+    @media only screen and (min-device-width: 375px) and (max-device-width: 960px) and (orientation: landscape) {
+        .menu_img-logo {
+            height: 60px;
+            margin: 10px auto;
+            margin-bottom: 5px;
+        }                
+        header .txt-menu__title {
+            font-size: 16px !important;
+            margin-bottom: 0px;
+        }
+        .menu-nav {
+            margin: 0px;
+            margin-top: 5px;
+        }
+        .menu-nav li {
+            letter-spacing: 0.5px;
+            padding: 0 0.5rem !IMPORTANT;
+            font-size: 1rem;
+        }                              
+        header .btn-block {
+            margin: 8px 0;
+        }
+        header .explore-btn {
+            padding: 0.2rem 1.5rem;
+        }
+        header .item .figure{
+            padding: 10px;
+        }
+        #desktop{
+            display: none;
+        }
+        #mobile{
+            display: block;
+        }
+        #mobile .menu_img-logo{
+            height: 50px;
+        }
+        .quote-menu{
+            line-height: 15px;
+        }
+        .prev-btn,
+        .nxt-btn{
+            font-size: 2.5rem;
+        }
+        .prev-btn{       
+            left: 20%;
+            margin: 0;
+        }
+        .nxt-btn{          
+            right: 20%;
+            margin: 0;
+        }
+        .vip-exp{
+            display: block !important;
+        }
+    }
+    @media only screen and (max-width: 550px) {
+        .logo-div {
+            width: 170px;
+        }
+        .owl-carousel .item{
+            border:0px
+        }
+    }
+    @media only screen and (max-width: 450px) and (orientation:portrait) {
+        .menu_img-logo {
+            height: 60px;
+            margin: 10px auto;
+        }
+        .menu-nav {
+            margin: 0px;
+            margin-bottom: 10px;
+        }
+        .menu-nav li {
+            display: block;
+            font-size: 1rem;
+        }
+        .quote-menu {
+            margin-bottom: 0px;
+        }
+        .quote-menu li{
+            display: inline;
+        }
+        header .txt-menu__title {
+            margin-bottom: 0px;
+            font-size: 16px !important;
+        }
+        header .item .figure{
+            padding: 10px;
+        }
+        header .btn-block{
+            margin: 15px 0;
+        }
+        header .explore-btn{
+            padding:  0.4rem 2.5rem;
+        }
+        #desktop{
+            display: none;
+        }
+        #mobile{
+            display: block;
+        }
+        #mobile .menu_img-logo{
+            height: 50px;
+        }
+        .quote-menu{
+            line-height: 15px;
+        }
+        .prev-btn,
+        .nxt-btn{
+            font-size: 2.5rem;
+        }
+        .prev-btn{
+            top:35%;
+            left: 0 !important;
+            margin: 0;
+        }
+        .nxt-btn{
+            top:35%;
+            right: 0 !important;
+            margin: 0;
+        }
+        .vip-exp{
+            display: block !important;
+        }
+    }
+    @media only screen and (max-width: 768px) {                
+        .menu-nav li {
+            padding: 0 1.7rem;
+        }
+        header .txt-menu__title {
+            font-size: 19px;
+        }
+        header .item .figure{
+            padding: 10px;
+        }
+		.hide-text{
+			display:none
+		}
+		footer{
+			position:relative !important
+		}
+		.quickContact{
+			padding:0 10px;
+		}
+
+    }
+    @media only screen and (max-width: 1024px) {    
+        .prev-btn{
+            top:35%;
+            left: 15%;
+            margin: 0;
+        }
+        .nxt-btn{
+            top:35%;
+            right: 15%;
+            margin: 0;
+        }
+    }
+	.quickContact{
+		float:left;
+		padding:20px 10px;
+		color:#826a24
+	}
+	.quickContact a{
+		color:#826a24
+	}	
+	.quickContact span.sepretor, .quickContact .fa{
+		margin:0 10px;
+	}
+</style>
+<header>
+<div class="quickContact"><a href="tel:+912271600800"><i class="fa fa-phone"></i><span class="hide-text">+91 22 71600800</span></a><span class="sepretor hide-text">|</span><a href="mailto:contact@theindusclub.com"><i class="fa fa-envelope"></i><span class="hide-text">contact@theindusclub.com</span></a></div>
+    <div id="nav-icon1"> <span></span> <span></span> <span></span> </div>
+    <div id="menu-container" class="header-menu">
+        <div style="min-height: 100vh;">
+            <div class="container-fluid">                
+                <div class="row">
+                    <div class="logo-div">
+                        <a id="desktop" href="index.html"><img class="img-responsive menu_img-logo" src="assets/img/logo-large.png"></a>
+                        <a id="mobile" href="index.html"><img class="img-responsive menu_img-logo" src="assets/img/logo-small.png"></a>
+                    </div>
+                    <ul class="menu-nav">
+                        <li id="tab1" class="tab selected">BUSINESS &amp; LEISURE</li>
+                        <li id="tab2" class="tab">WINE &amp; DINE</li>
+                        <li id="tab3" class="tab">EVENTS &amp; EXPERIENCES</li>
+                        <li id="tab4" class="tab">DESIGN</li>
+                        <li id="tab5" class="tab">ACCOLADES</li>
+                        <li id="tab6" class="tab">MEMBERSHIP</li>
+                        <li id="tab7" class="tab">PARTNERSHIPS</li>
+                        <li id="tab8" class="tab">CAREERS</li>
+                        <li id="tab9" class="tab">CONTACT</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container-fluid" style="position: relative;">
+                <span id="customPrevBtn" class="glyphicon glyphicon-menu-left prev-btn txt-gradient"></span>
+                <span id="customNextBtn" class="glyphicon glyphicon-menu-right nxt-btn txt-gradient"></span>
+                <div class="row">                    
+                    <!--  Owl carousel  -->
+                    <div id="myCarousel1" class="owl-carousel">
+                        <div class="item">
+                            <h2 class="txt-uppercase txt-menu__title txt-gradient"><a href="business-and-leisure.html">BUSINESS &amp; LEISURE</a></h2>
+                            <div class="figure gradient-border ">
+                                <a href="business-and-leisure.html">
+                                    <picture>
+                                        <source class="img-responsive menu-banner" srcset="assets/img/menu/menu-business__banner.webp" type="image/webp" alt="Business and Leisure">
+                                        <source class="img-responsive menu-banner" srcset="assets/img/menu/menu-business__banner.jpg" type="image/png" alt="Business and Leisure">
+                                        <img class="img-responsive menu-banner" src="assets/img/menu/menu-business__banner.jpg" alt="Business and Leisure">
+                                    </picture>
+                                    <!--<img class="img-responsive menu-banner" src="assets/img/menu/menu-business__banner.jpg">-->
+                                </a>
+                            </div>
+                            <div class="btn-block"> <a href="business-and-leisure.html" class="explore-btn">EXPLORE</a> </div>
+                        </div>
+                        <div class="item">
+                            <h2 class="txt-uppercase txt-menu__title txt-gradient"><a href="wine-and-dine.html">WINE &amp; DINE</a></h2>
+                            <div class="figure gradient-border ">
+                                <a href="wine-and-dine.html">
+                                    <picture>
+                                        <source class="img-responsive menu-banner" srcset="assets/img/menu/menu-wine-dine__banner.webp" type="image/webp" alt="Wine and Dine">
+                                        <source class="img-responsive menu-banner" srcset="assets/img/menu/menu-wine-dine__banner.jpg" type="image/png" alt="Wine and Dine">
+                                        <img class="img-responsive menu-banner" src="assets/img/menu/menu-wine-dine__banner.jpg" alt="Wine and Dine">
+                                    </picture>
+                                    <!--<img class="img-responsive menu-banner" src="assets/img/menu/menu-wine-dine__banner.jpg">-->
+                                </a>
+                            </div>   
+                            <ul class="menu-nav quote-menu">
+                                <li class="tab"><a href="wine-and-dine.html#ajay-chopra">FOOD</a></li>
+                                <li class="tab"><a href="wine-and-dine.html#cocktails">COCKTAILS</a></li>
+                                <li class="tab"><a href="wine-and-dine.html#whiskies">WHISKIES</a></li>
+                                <li class="tab"><a href="wine-and-dine.html#wines">WINES</a></li>
+                                <li class="tab"><a href="wine-and-dine.html#cigars">CIGARS</a></li>
+                            </ul>
+                            <div class="btn-block"> <a href="wine-and-dine.html" class="explore-btn">EXPLORE</a> </div>
+                        </div>
+                        <div class="item">
+                            <h2 class="txt-uppercase txt-menu__title txt-gradient"><a href="events-and-experiences.html">EVENTS &amp; Experiences</a></h2>
+                            <div class="figure gradient-border ">
+                                <a href="events-and-experiences.html">                                    
+                                    <picture>
+                                        <source class="img-responsive menu-banner" srcset="assets/img/menu/menu-events__banner.webp" type="image/webp" alt="Events and Experiences">
+                                        <source class="img-responsive menu-banner" srcset="assets/img/menu/menu-events__banner.jpg" type="image/png" alt="Events and Experiences">
+                                        <img class="img-responsive menu-banner" src="assets/img/menu/menu-events__banner.jpg" alt="Events and Experiences">
+                                    </picture>
+                                    <!--<img class="img-responsive menu-banner" src="assets/img/menu/menu-events__banner.jpg">-->
+                                </a>
+                            </div>
+                            <ul class="menu-nav quote-menu">
+                                <li class="tab"><a href="events-and-experiences.html#member">MEMBER EVENTS</a></li>
+                                <li class="tab"><a href="events-and-experiences.html#private">PRIVATE EVENTS</a></li>
+                                <li class="tab vip-exp"><a href="events-and-experiences.html#vip">VIP EXPERIENCES</a></li>
+                            </ul>
+                            <div class="btn-block"> <a href="events-and-experiences.html" class="explore-btn">EXPLORE</a> </div>
+                        </div>
+                        <div class="item">
+                            <h2 class="txt-uppercase txt-menu__title txt-gradient"><a href="design.html">DESIGN</a></h2>
+                            <div class="figure gradient-border ">
+                                <a href="design.html">
+                                    <picture>
+                                        <source class="img-responsive menu-banner" srcset="assets/img/menu/menu-design__banner.webp" type="image/webp" alt="Design Banner">
+                                        <source class="img-responsive menu-banner" srcset="assets/img/menu/menu-design__banner.jpg" type="image/png" alt="Design Banner">
+                                        <img class="img-responsive menu-banner" src="assets/img/menu/menu-design__banner.jpg" alt="Design Banner">
+                                    </picture>
+                                    <!--<img class="img-responsive menu-banner" src="assets/img/menu/menu-design__banner.jpg">-->
+                                </a>
+                            </div>
+                            <ul class="menu-nav quote-menu">
+                                <li class="tab"><a href="design.html#interior">INTERIORS</a></li>
+                                <li class="tab"><a href="design.html#art">ART</a></li>
+                                <li class="tab"><a href="design.html#technology">TECHNOLOGY</a></li>
+                            </ul>
+                            <div class="btn-block"> <a href="design.html" class="explore-btn">EXPLORE</a> </div>
+                        </div>
+                        <div class="item">
+                            <h2 class="txt-uppercase txt-menu__title txt-gradient"><a href="accolades.html">ACCOLADES</a></h2>
+                            <div class="figure gradient-border ">
+                                <a href="accolades.html">
+                                    <picture>
+                                        <source class="img-responsive menu-banner" srcset="assets/img/menu/menu-quote_banner.webp" type="image/webp" alt="Accolades Banner">
+                                        <source class="img-responsive menu-banner" srcset="assets/img/menu/menu-quote_banner.png" type="image/png" alt="Accolades Banner">
+                                        <img class="img-responsive menu-banner" src="assets/img/menu/menu-quote_banner.png" alt="Accolades Banner">
+                                    </picture>
+                                    <!--<img class="img-responsive menu-banner" src="assets/img/menu/menu-quote_banner.png">-->
+                                </a>
+                            </div>
+                            <ul class="menu-nav quote-menu">
+                                <li class="tab"><a href="members-speak.html">MEMBERSPEAK</a></li>
+                                <li class="tab"><a href="media-news.html">MEDIA SPEAK</a></li>
+                            </ul>
+                            <div class="btn-block"> <a href="accolades.html" class="explore-btn">EXPLORE</a> </div>
+                        </div>  
+                        <div class="item">
+                            <h2 class="txt-uppercase txt-menu__title txt-gradient"><a href="club-membership.html">MEMBERSHIP</a></h2>
+                            <div class="figure gradient-border ">
+                                <a href="club-membership.html">
+                                    <picture>
+                                        <source class="img-responsive menu-banner" srcset="assets/img/menu/menu-membership__banner.webp" type="image/webp" alt="Membership">
+                                        <source class="img-responsive menu-banner" srcset="assets/img/menu/menu-membership__banner.jpg" type="image/png" alt="Membership">
+                                        <img class="img-responsive menu-banner" src="assets/img/menu/menu-membership__banner.jpg" alt="Membership">
+                                    </picture>
+                                    <!--<img class="img-responsive menu-banner" src="assets/img/menu/menu-membership__banner.jpg">-->
+                                </a>
+                            </div>
+                            <div class="btn-block"> <a href="club-membership.html" class="explore-btn">EXPLORE</a> </div>
+                        </div>  
+                        <div class="item">
+                            <h2 class="txt-uppercase txt-menu__title txt-gradient"><a href="partnerships.html">PARTNERSHIPS</a></h2>
+                            <div class="figure gradient-border ">
+                                <a href="partnerships.html">
+                                    <picture>
+                                        <source class="img-responsive menu-banner" srcset="assets/img/menu/menu-alliances__banner.webp" type="image/webp" alt="Partnerships Banner">
+                                        <source class="img-responsive menu-banner" srcset="assets/img/menu/menu-alliances__banner.jpg" type="image/png" alt="Partnerships Banner">
+                                        <img class="img-responsive menu-banner" src="assets/img/menu/menu-alliances__banner.jpg" alt="Partnerships Banner">
+                                    </picture>
+                                    <!--<img class="img-responsive menu-banner" src="assets/img/menu/menu-alliances__banner.jpg">-->
+                                </a>
+                            </div>
+                            <ul class="menu-nav quote-menu">
+                                <li class="tab"><a href="partnerships.html#brands">ALLIANCES</a></li>
+                                <li class="tab"><a href="partnerships.html#reciprocals">RECIPROCALS</a></li>
+                            </ul>
+                            <div class="btn-block"> <a href="partnerships.html" class="explore-btn">EXPLORE</a> </div>
+                        </div>  
+                        <div class="item">
+                            <h2 class="txt-uppercase txt-menu__title txt-gradient"><a href="careers.html">CAREERS</a></h2>
+                            <div class="figure gradient-border ">
+                                <a href="careers.html">
+                                    <picture>
+                                        <source class="img-responsive menu-banner" srcset="assets/img/menu/menu-career__banner.webp" type="image/webp" alt="Careers Banner">
+                                        <source class="img-responsive menu-banner" srcset="assets/img/menu/menu-career__banner.jpg" type="image/png" alt="Careers Banner">
+                                        <img class="img-responsive menu-banner" src="assets/img/menu/menu-career__banner.jpg" alt="Careers Banner">
+                                    </picture>
+                                    <!--<img class="img-responsive menu-banner" src="assets/img/menu/menu-career__banner.jpg">-->
+                                </a>
+                            </div>
+                            <div class="btn-block"> <a href="careers.html" class="explore-btn">EXPLORE</a> </div>
+                        </div>  
+                        <div class="item">
+                            <h2 class="txt-uppercase txt-menu__title txt-gradient"><a href="contact-us.html">CONTACT</a></h2>
+                            <div class="figure gradient-border ">
+                                <a href="contact-us.html">
+                                    <picture>
+                                        <source class="img-responsive menu-banner" srcset="assets/img/menu/menu-contact__banner.webp" type="image/webp" alt="Contact Banner">
+                                        <source class="img-responsive menu-banner" srcset="assets/img/menu/menu-contact__banner.jpg" type="image/png" alt="Contact Banner">
+                                        <img class="img-responsive menu-banner" src="assets/img/menu/menu-contact__banner.jpg" alt="Contact Banner">
+                                    </picture>
+                                    <!--<img class="img-responsive menu-banner" src="assets/img/menu/menu-contact__banner.jpg">-->
+                                </a>
+                            </div>
+                            <div class="btn-block"> <a href="contact-us.html" class="explore-btn">EXPLORE</a> </div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!--<script src="assets/js/modernizr-custom.js"></script>-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
+<script>  
+    $(function () {
+        $('.owl-carousel').owlCarousel({
+            margin: 100
+            , loop: true
+            , items: 1                    
+            , responsiveClass:true
+            , responsive:{
+                0:{
+                    stagePadding: 30
+                },                        
+                480:{
+                    stagePadding: 150                            
+                },                        
+                600:{
+                    stagePadding: 180
+                },
+                1000:{    
+                    stagePadding: 200
+                },
+                1200:{    
+                    stagePadding: 350
+                },
+                1400:{    
+                    stagePadding: 450
+                },
+                1780:{
+                    stagePadding: 500  
+                },                
+                1950:{    
+                    stagePadding: 550
+                },
+                2200: {
+                    stagePadding: 600
+                }
+            }
+        });
+    });
+    //Tabs
+    var carousel = $("#myCarousel1");
+
+    $('#tab1').click(function(){
+        carousel.trigger('to.owl.carousel', 0);
+        $('#tab1').addClass('selected')
+        $('#tab2').removeClass('selected')
+        $('#tab3').removeClass('selected')
+        $('#tab4').removeClass('selected')
+        $('#tab5').removeClass('selected')
+        $('#tab6').removeClass('selected')
+        $('#tab7').removeClass('selected')
+        $('#tab8').removeClass('selected')
+        $('#tab9').removeClass('selected')
+    });
+    $('#tab2').click(function(){
+        carousel.trigger('to.owl.carousel', 1);
+        $('#tab1').removeClass('selected')
+        $('#tab2').addClass('selected')
+        $('#tab3').removeClass('selected')
+        $('#tab4').removeClass('selected')
+        $('#tab5').removeClass('selected')
+        $('#tab6').removeClass('selected')
+        $('#tab7').removeClass('selected')
+        $('#tab8').removeClass('selected')
+        $('#tab9').removeClass('selected')
+    });
+    $('#tab3').click(function(){
+        carousel.trigger('to.owl.carousel', 2);
+        $('#tab1').removeClass('selected')
+        $('#tab2').removeClass('selected')
+        $('#tab3').addClass('selected')
+        $('#tab4').removeClass('selected')
+        $('#tab5').removeClass('selected')
+        $('#tab6').removeClass('selected')
+        $('#tab7').removeClass('selected')
+        $('#tab8').removeClass('selected')
+        $('#tab9').removeClass('selected')
+    });
+    $('#tab4').click(function(){
+        carousel.trigger('to.owl.carousel', 3);
+        $('#tab1').removeClass('selected')
+        $('#tab2').removeClass('selected')
+        $('#tab3').removeClass('selected')
+        $('#tab4').addClass('selected')
+        $('#tab5').removeClass('selected')
+        $('#tab6').removeClass('selected')
+        $('#tab7').removeClass('selected')
+        $('#tab8').removeClass('selected')
+        $('#tab9').removeClass('selected')        
+    });
+    $('#tab5').click(function(){
+        carousel.trigger('to.owl.carousel', 4);
+        $('#tab1').removeClass('selected')
+        $('#tab2').removeClass('selected')
+        $('#tab3').removeClass('selected')
+        $('#tab4').removeClass('selected')
+        $('#tab5').addClass('selected')
+        $('#tab6').removeClass('selected')
+        $('#tab7').removeClass('selected')
+        $('#tab8').removeClass('selected')
+        $('#tab9').removeClass('selected')
+    });
+    $('#tab6').click(function(){
+        carousel.trigger('to.owl.carousel', 5);
+        $('#tab1').removeClass('selected')
+        $('#tab2').removeClass('selected')
+        $('#tab3').removeClass('selected')
+        $('#tab4').removeClass('selected')
+        $('#tab5').removeClass('selected')
+        $('#tab6').addClass('selected')
+        $('#tab7').removeClass('selected')
+        $('#tab8').removeClass('selected')
+        $('#tab9').removeClass('selected')
+    });
+    $('#tab7').click(function(){
+        carousel.trigger('to.owl.carousel', 6);
+        $('#tab1').removeClass('selected')
+        $('#tab2').removeClass('selected')
+        $('#tab3').removeClass('selected')
+        $('#tab4').removeClass('selected')
+        $('#tab5').removeClass('selected')
+        $('#tab6').removeClass('selected')
+        $('#tab7').addClass('selected')
+        $('#tab8').removeClass('selected')
+        $('#tab9').removeClass('selected')
+    });
+    $('#tab8').click(function(){
+        carousel.trigger('to.owl.carousel', 7);
+        $('#tab1').removeClass('selected')
+        $('#tab2').removeClass('selected')
+        $('#tab3').removeClass('selected')
+        $('#tab4').removeClass('selected')
+        $('#tab5').removeClass('selected')
+        $('#tab6').removeClass('selected')
+        $('#tab7').removeClass('selected')
+        $('#tab8').addClass('selected')
+        $('#tab9').removeClass('selected')
+    });
+    $('#tab9').click(function(){
+        carousel.trigger('to.owl.carousel', 8);
+        $('#tab1').removeClass('selected')
+        $('#tab2').removeClass('selected')
+        $('#tab3').removeClass('selected')
+        $('#tab4').removeClass('selected')
+        $('#tab5').removeClass('selected')
+        $('#tab6').removeClass('selected')
+        $('#tab7').removeClass('selected')
+        $('#tab8').removeClass('selected')
+        $('#tab9').addClass('selected')
+    });
+</script>
+<script>
+    var owl = $('.owl-carousel');
+    owl.owlCarousel();
+    $('#customNextBtn').click(function() {
+        owl.trigger('next.owl.carousel');
+    })
+    $('#customPrevBtn').click(function() {
+        owl.trigger('prev.owl.carousel', [300]);
+    })
+</script>
+<script>
+    $(document).ready(function () {
+        $('#nav-icon1, .knowmore-btn').click(function () {
+            $('#nav-icon1').toggleClass('open');
+            $('#menu-container').slideToggle('selected');
+        });
+    });
+</script>
+

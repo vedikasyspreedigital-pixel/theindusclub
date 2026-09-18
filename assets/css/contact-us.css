@@ -1,0 +1,199 @@
+body{
+    background: #0e1d39;
+}
+.no-webp body::before {
+    content: "";
+    background: url(../img/body-bg__Reception.jpg) no-repeat fixed;
+    -webkit-background-size: cover; 
+    -moz-background-size: cover; 
+    -o-background-size: cover; 
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;   
+}
+.top-reg-buttton {
+    position: fixed;
+    right: 0;
+    transition: all 0.5s;
+    z-index: 999;
+    padding: 10px;
+    background: #242d4a;
+    width: 200px;
+    cursor: pointer;
+    bottom: 60px;
+}
+span.int-text {
+    color: #fff;
+}
+.webp body::before {
+    content: "";
+    background: url(../img/body-bg__Reception.webp) no-repeat fixed;
+    -webkit-background-size: cover; 
+    -moz-background-size: cover; 
+    -o-background-size: cover; 
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;   
+}
+.right-design {
+    position: absolute;
+    right: 0px;
+    top: 15rem;
+    z-index: -1;
+    background: url(../img/right-design.png) no-repeat fixed;
+}
+.left-design {
+    position: absolute;
+    left: 0px;
+    top: 30rem;
+    z-index: -1;
+}
+section {
+    color: #9F865E;
+    min-height: 100vh;
+}
+.img-logo {
+    margin: 0 auto 20px auto;
+}
+article {
+   /* margin: 4rem 26rem 2rem;*/
+}
+.banner-container {
+    margin: 15px;
+    background: #f6f1ed;
+    box-shadow: 0px 0px 30px 5px rgba(74, 74, 74, 0.25);
+}
+.banner-details {
+    color: #9F865E;
+    padding: 5rem 1rem !important;
+}
+.banner-page__title {
+    padding: 8em 5.5rem !important;
+}
+.about-txt p {
+    font-size: 2rem;
+    line-height: 3rem;
+    margin: auto;
+    margin-bottom: 4rem;
+}
+.about-txt {
+    padding: 1rem 14rem;
+}
+.flex-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.flex-container>div {
+    background-color: #242d4a;
+    width: 45rem;
+    margin: 3rem;
+    text-align: center;
+}
+.flex-container a,
+.flex-container a:hover,
+.flex-container a:focus {
+    color: #9F865E;
+}
+.flex-container h3 {
+    background: #242d4a;
+    padding: 20px 0px;
+}
+.map-container iframe{
+    display: block;
+    margin-top: 5rem;
+}
+.fa {
+    color: #242d4a;
+    background: white;
+    padding: 8px;
+    font-size: 15px !important;
+    width: 30px;
+    text-decoration: none;
+    margin: 0px 8px;
+    border-radius: 50%;
+}
+@media only screen and (max-width: 425px) and (orientation:portrait) {
+    article {
+        margin: 30px 0 !important;
+    }
+    .banner-container {
+        margin: 15px;
+    }
+    .flex-container>div {
+        margin: 2rem 1rem;
+    }
+    .about-txt {
+        padding: 1rem !important;
+    }
+    .about-txt p {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+    .img-logo {
+        height: 60px;
+    }
+    .right-design,
+    .left-design,
+    .right-design1,
+    .left-design1 {
+        height: 18rem;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .banner-page__title,
+    .banner-details {
+        padding: 1.3em !important;
+    }
+    .about-txt {
+        padding: 1rem 5rem;
+    }
+    /* The address/social column and the building-photo column were both
+       col-xs-6 (fixed half-width even on phones), so on a narrow screen
+       everything -- the address text, phone/email, social icons, and the
+       building thumbnail -- got squeezed into two ~180px slivers side by
+       side. They're col-xs-12 now (stack full-width), and this centers
+       the text/icons and gives the photo a proper frame to match how
+       every other page presents its images. */
+    .contact_us_details {
+        padding: 2.5rem 1.5rem !important;
+        text-align: center;
+    }
+    .contact_us_details hr.contact {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .contact_us_details > div {
+        justify-content: center;
+    }
+    .contact-us__image {
+        padding-top: 0 !important;
+    }
+    .contact-us__image img {
+        max-width: 280px;
+        margin: 0 auto;
+        border: 1px solid #9F865E;
+    }
+}
+@media only screen and (max-width: 1024px) {
+    article {
+        margin: 4rem 10rem 2rem;
+    }
+}
+@media only screen and (min-width: 1780px) {
+    article {
+        margin: 4rem 16rem 2rem;
+    }
+}

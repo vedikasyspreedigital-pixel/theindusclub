@@ -1,0 +1,150 @@
+body{
+    background: #0e1d39;
+}
+.no-webp body::before {
+    content: "";
+    background: url(../img/body-bg__Warren.jpg) no-repeat fixed;
+    -webkit-background-size: cover; 
+    -moz-background-size: cover; 
+    -o-background-size: cover; 
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;   
+}
+
+.webp body::before {
+    content: "";
+    background: url(../img/body-bg__Warren.webp) no-repeat fixed;
+    -webkit-background-size: cover; 
+    -moz-background-size: cover; 
+    -o-background-size: cover; 
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;   
+}
+.right-design {
+    position: absolute;
+    right: 0px;
+    top: 15rem;
+    z-index: -1;
+}
+.right-design1 {
+    position: absolute;
+    right: 0px;
+    top: 120rem;
+    z-index: -1;
+}
+.left-design {
+    position: absolute;
+    left: 0px;
+    top: 60rem;
+    z-index: -1;
+}
+section {
+    color: #9F865E;
+    min-height: 100vh;
+}
+.img-logo {
+    height: 80px;
+    margin: 20px auto;
+}
+article {
+    margin: 4rem;
+    margin-bottom: 2rem;
+}
+.banner-container {
+    margin: 30px;
+    background: #f6f1ed;
+    box-shadow: 0px 0px 30px 5px rgba(74, 74, 74, 0.25);
+}
+.banner-details {
+    color: #9F865E;
+    padding: 5rem 1rem !important;
+}
+.banner-page__title {
+    padding: 10em 2rem ;
+}
+.banner-page__title .txt-title {
+    font-size: 4rem;
+}
+.banner-details p,
+.membership-txt p {
+    font-size: 1.8rem;
+    line-height: 3rem;
+    margin: auto;
+}
+.membership-txt p {
+    padding: 2rem 10rem;
+}
+.second-banner {
+    color: #fff;
+    margin: 3rem 10rem 8rem;
+}
+.second-banner p {
+    font-size: 1.8rem;
+    margin: 2rem 0rem;
+    line-height: 3rem;
+}
+@media only screen and (max-width: 450px) and (orientation:portrait) {
+    article {
+        margin: 30px 0;
+    }
+    .banner-container {
+        margin: 15px;
+    }
+    .img-logo {
+        height: 60px;
+    }
+    .membership-txt p {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+    .banner-page__title .txt-title {
+        font-size: 3rem;
+    }
+    .right-design,
+    .left-design,
+    .right-design1,
+    .left-design1 {
+        height: 18rem;
+    }  .careers-txt p {
+        margin: 3rem 0rem;
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .banner-details {
+        padding: 1.3em !important;
+    }
+    .second-banner {
+        margin: 3rem 0rem 8rem;
+    }
+    .banner-page__title{
+        padding:  2rem  !important ;
+    }
+    .membership-txt p {
+        padding: 2rem 0rem;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .banner-page__title{
+        padding: 6em 2rem  ;
+    }
+    .hr-email{
+        font-size: 16px;
+    }
+}

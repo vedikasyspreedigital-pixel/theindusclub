@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "backup-static-preview",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-p", "6321"],
+      "port": 6321
+    }
+  ]
+}

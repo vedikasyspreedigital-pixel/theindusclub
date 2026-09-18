@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add to Calendar - The Indus Club</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            padding: 25px 18px;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+
+        .card {
+            max-width: 450px;
+            margin: 30px auto;
+            padding: 30px 22px;
+            background: #ffffff;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #222;
+        }
+
+        #eventDetails {
+            margin: 20px 0;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        #calendarButton {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            background: #188038;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            border: none;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        #calendarButton:active {
+            transform: scale(0.98);
+        }
+
+        #errorMessage {
+            display: none;
+            color: #b00020;
+            margin-top: 20px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="card">
+
+    <h2>The Indus Club</h2>
+
+    <div id="eventDetails">
+        Preparing your appointment...
+    </div>
+
+    <button id="calendarButton">
+        Add to Calendar
+    </button>
+
+    <div id="errorMessage">
+        Unable to prepare the calendar appointment.
+    </div>
+
+</div>
+
+
+<script>
+
+(function () {
+
+    /*
+     * Get event parameter from URL
+     */
+
+    const params = new URLSearchParams(
+        window.location.search
+    );
+
+    const eventEncoded =
+        params.get("event");
+
+
+    const button =
+        document.getElementById(
+            "calendarButton"
+        );
+
+    const eventDetails =
+        document.getElementById(
+            "eventDetails"
+        );
+
+    const errorMessage =
+        document.getElementById(
+            "errorMessage"
+        );
+
+
+    /*
+     * No event supplied
+     */
+
+    if (!eventEncoded) {
+
+        button.style.display = "none";
+
+        eventDetails.style.display = "none";
+
+        errorMessage.style.display = "block";
+
+        return;
+    }
+
+
+    try {
+
+        /*
+         * Decode event JSON
+         */
+
+        const event =
+            JSON.parse(
+                decodeURIComponent(
+                    eventEncoded
+                )
+            );
+
+
+        /*
+         * Event values
+         */
+
+        const title =
+            event.title ||
+            "Membership Manager Call";
+
+        const start =
+            event.start;
+
+        const end =
+            event.end;
+
+        const details =
+            event.details ||
+            "";
+
+        const location =
+            event.location ||
+            "";
+
+
+        /*
+         * Validate
+         */
+
+        if (!start || !end) {
+
+            throw new Error(
+                "Event date/time missing"
+            );
+
+        }
+
+
+        /*
+         * Convert:
+         *
+         * 2026-09-16T15:00:00
+         *
+         * to:
+         *
+         * 20260916T150000
+         */
+
+        function googleDateTime(value) {
+
+            return value
+                .substring(0, 19)
+                .replace(/[-:]/g, "")
+                .replace("T", "T");
+
+        }
+
+
+        const startGoogle =
+            googleDateTime(start);
+
+        const endGoogle =
+            googleDateTime(end);
+
+
+        /*
+         * Encode event information
+         */
+
+        const titleEncoded =
+            encodeURIComponent(title);
+
+        const detailsEncoded =
+            encodeURIComponent(details);
+
+        const locationEncoded =
+            encodeURIComponent(location);
+
+
+        /*
+         * Google Calendar URL
+         *
+         * Asia/Kolkata = IST
+         */
+
+        const calendarUrl =
+            "https://calendar.google.com/calendar/u/0/r/eventedit" +
+            "?action=TEMPLATE" +
+            "&text=" + titleEncoded +
+            "&dates=" +
+            startGoogle +
+            "/" +
+            endGoogle +
+            "&details=" +
+            detailsEncoded +
+            "&location=" +
+            locationEncoded +
+            "&ctz=Asia/Kolkata";
+
+
+        /*
+         * Display appointment
+         */
+
+        function formatDateTime(value) {
+
+            const date =
+                new Date(
+                    value + "+05:30"
+                );
+
+            return date.toLocaleString(
+                "en-IN",
+                {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric",
+                    hour: "numeric",
+                    minute: "2-digit",
+                    hour12: true
+                }
+            );
+
+        }
+
+
+        eventDetails.innerHTML =
+            "<strong>" +
+            title +
+            "</strong>" +
+            "<br><br>" +
+            formatDateTime(start) +
+            " – " +
+            formatDateTime(end);
+
+
+        /*
+         * ADD TO CALENDAR
+         */
+
+        button.addEventListener(
+            "click",
+            function () {
+
+                /*
+                 * Open Google Calendar.
+                 *
+                 * On Android this uses the
+                 * Google Calendar app/browser
+                 * according to the device setup.
+                 */
+
+                window.open(
+                    calendarUrl,
+                    "_blank"
+                );
+
+            }
+        );
+
+
+    }
+    catch (error) {
+
+        console.error(
+            "Calendar error:",
+            error
+        );
+
+        button.style.display = "none";
+
+        eventDetails.style.display = "none";
+
+        errorMessage.style.display = "block";
+
+    }
+
+})();
+
+</script>
+
+</body>
+
+</html>

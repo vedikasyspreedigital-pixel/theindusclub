@@ -1,0 +1,11 @@
+# Live credentials — never commit these
+zoho-config.php
+zoho-token-cache.json
+
+# Separate WordPress site, not part of this static deploy
+campaign/
+
+# Zip archives exceed GitHub's 100MB file limit; content already exists
+# unzipped elsewhere in the repo
+assets.zip
+campaign.zip

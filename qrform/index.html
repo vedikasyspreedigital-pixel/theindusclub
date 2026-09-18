@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Membership Referral</title>
+
+<style>
+
+.full{
+grid-column:1 / 3;
+width:100%;
+}
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:transparent;
+display:flex;
+justify-content:center;
+align-items:flex-start;
+min-height:100vh;
+padding:40px 20px;
+box-sizing:border-box;
+}
+
+/* CARD */
+
+.form-container{
+width:680px;
+max-width:90%;
+background:white;
+padding:50px 60px;
+border-radius:6px;
+box-shadow:0 25px 60px rgba(0,0,0,0.25);
+position:relative;
+overflow:visible;
+}
+
+/* CLOSE BUTTON */
+
+.close-btn{
+position:absolute;
+top:15px;
+right:20px;
+font-size:22px;
+color:#777;
+cursor:pointer;
+}
+
+/* LOGO */
+
+.form-logo{
+text-align:center;
+margin-bottom:15px;
+}
+
+.form-logo img{
+max-height:80px;
+width:auto;
+display:block;
+margin:0 auto;
+}
+
+/* DESCRIPTION */
+
+.form-description{
+text-align:center;
+font-size:14px;
+color:#9F865E;
+line-height:1.6;
+margin:0px 0px 25px;
+font-weight:bold;
+font-family:'Walburn-Regular-2';
+max-width:628px;
+margin-left:auto;
+margin-right:auto;
+}
+
+/* GRID */
+
+.form-grid{
+display:grid;
+grid-template-columns:46% 46%;
+justify-content:space-between;
+row-gap:22px;
+margin-top:40px;
+width:100%;
+}
+
+/* INPUTS */
+
+.form-grid input,
+.form-grid select{
+width:100%;
+padding:12px 14px;
+border:1px solid #cfcfcf;
+border-radius:0;
+font-size:14px;
+outline:none;
+background:transparent;
+color:#444;
+}
+
+.form-grid input:hover,
+.form-grid select:hover{
+border-color:#c5a880;
+background:#fff;
+}
+
+.form-grid input:focus,
+.form-grid select:focus{
+border-color:#cfcfcf;
+background:transparent;
+box-shadow:none;
+}
+
+.full{
+grid-column:1 / 3;
+}
+
+/* BUTTON */
+
+.submit-btn{
+margin-top:25px;
+background:#C8b38a;
+border:none;
+padding:10px 42px;
+color:white;
+font-size:12px;
+letter-spacing:3px;
+cursor:pointer;
+display:block;
+margin-left:auto;
+margin-right:auto;
+}
+
+.submit-btn:hover{
+background:#b4976e;
+transform:translateY(-2px);
+box-shadow:0 6px 20px rgba(0,0,0,0.15);
+}
+
+
+@media (max-width:768px){
+
+.form-container{
+padding:35px 25px;
+}
+
+.form-grid{
+grid-template-columns:100%;
+}
+
+.full{
+grid-column:auto;
+}
+
+.form-logo img{
+max-height:180px;
+}
+
+}
+
+
+</style>
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MFBFBSMD');</script>
+<!-- End Google Tag Manager -->
+</head>
+
+
+<body>
+
+<div class="form-container">
+
+<div class="close-btn" onclick="window.history.back()">×</div>
+
+
+<div class="form-logo">
+<img src="/assets/img/logo-small.png">
+</div>
+
+<div class="form-description">
+The Indus Club membership is strictly by invitation or member referral,
+extended to newsmakers, leaders and legends; at the sole discretion of the
+Membership Committee. We welcome interest from persons that believe they
+belong to this unique fellowship and will respond promptly to inquiries.
+</div>
+
+<form id="webform2196827000114725006"
+name="WebToLeads2196827000114725006"
+action="https://crm.zoho.com/crm/WebToLeadForm"
+method="POST"
+onSubmit="javascript:document.charset='UTF-8'; return prepAndCheck2196827000114725006();"
+accept-charset="UTF-8">
+
+<!-- Do not remove this code. -->
+<input type="hidden" name="xnQsjsdp" value="5daff91af6e48ff195a1f1ac4ec24b6132f61d03956643a66355ae22c783d4d0">
+<input type="hidden" name="zc_gad" id="zc_gad" value="">
+<input type="hidden" name="xmIwtLD" value="a1687a44c8682f3564ebbf01542877061f3f0350916f2c5bf66e2705efa9d6f742b6a6a8ca1cd9f392a8b50881aa9462">
+<input type="hidden" name="actionType" value="TGVhZHM=">
+<input type="hidden" name="returnURL" value="https://theindusclub.com/Email_CTA/CTAThankyou.html">
+<input type="hidden" name="aG9uZXlwb3Q" value="">
+
+<!-- fixed CRM values for this source -->
+<input type="hidden" name="Lead Status" value="No Contact Initiated">
+<input type="hidden" name="LEADCF36" value="Cold">
+<input type="hidden" name="LEADCF26" value="Direct - Inquiry">
+
+<!-- hidden fields populated by name-split script -->
+<input type="hidden" id="fullname" name="fullname">
+<input type="hidden" id="First_Name" name="First Name">
+<input type="hidden" id="Last_Name" name="Last Name">
+
+<div class="form-grid">
+
+<input type="text" id="fullname_display" placeholder="Name*" required>
+
+<input type="text" name="Company" placeholder="Company Name*" required>
+
+<select name="Designation" class="full" required>
+<option selected disabled value="">Designation*</option>
+<option value="Promoter/Founder">Promoter/Founder/Co-Founder</option>
+<option value="Chairman/Managing Director">MD/Chairman/CEO</option>
+<option value="COO/President">COO/President</option>
+<option value="CFO/Finance Director">CFO/Finance Director</option>
+<option value="CHRO/HR Director">CHRO/HR Director</option>
+<option value="Diplomat">Diplomat</option>
+<option value="Artist/Author">Artist/Author</option>
+<option value="Sportsperson">Sportsperson</option>
+<option value="Filmmaker">Filmmaker</option>
+<option value="Other">Other</option>
+</select>
+
+<input type="text" name="LEADCF35" class="full" placeholder="Member Name (Referred by)">
+
+<input type="text" name="Mobile" placeholder="Mobile*" required>
+
+<input type="email" name="Email" placeholder="Email*" required>
+
+</div>
+
+<button class="submit-btn" type="submit">
+SUBMIT
+</button>
+
+</form>
+
+</div>
+
+<script>
+
+function prepAndCheck2196827000114725006(){
+
+var full = document.getElementById("fullname_display").value.trim();
+var parts = full.split(" ");
+var first = parts[0];
+var last = parts.length > 1 ? parts.slice(1).join(" ") : parts[0];
+
+document.getElementById("fullname").value = full;
+document.getElementById("First_Name").value = first;
+document.getElementById("Last_Name").value = last;
+
+if(full.length === 0){
+alert("Name cannot be empty.");
+return false;
+}
+
+return true;
+
+}
+
+</script>
+
+<!-- Do not remove this --- Analytics Tracking code starts -->
+<script id="wf_anal" src="https://crm.zohopublic.com/crm/WebFormAnalyticsServeServlet?rid=8dfef1d71f2905dc2add4223e01b600f9f1df7cd83b358e49918aff2a6ac3b38752ecdd6d179cf3756257ea8f6903699gid6db079125795f14a30101fcb3cfd2693cf9dc980cbd4a594f206ff640cf94b76gidc6fbc3016828c9ee4a180f5ef677ede603d0dd8cdae5e04a32ccb2316e54a7a0gid0bff55d85b6606e68819df7d1a9daac211771dfcadeaee2ba54dc58760be31b2&tw=978b391bd222b4f5fae1a568c82bcff8c220a0fa02faed9d8538d9e671cf96c2"></script>
+<!-- Do not remove this --- Analytics Tracking code ends. -->
+
+</body>
+</html>

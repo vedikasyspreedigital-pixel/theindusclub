@@ -1,0 +1,107 @@
+<script>
+(function () {
+
+    let timer = null;
+    let popupOpen = false;
+    let openTime = 0;
+    let submitted = localStorage.getItem("zohoPopupStopped") === "true";
+
+    function startTimer() {
+        if (submitted) return;
+
+        if (timer) clearTimeout(timer);
+
+        timer = setTimeout(showPopup, 10000); // show after 10 sec
+    }
+
+    function showPopup() {
+
+        if (popupOpen || submitted) return;
+
+        popupOpen = true;
+        openTime = Date.now(); // record open time
+
+        const wrapper = document.createElement("div");
+        wrapper.id = "zohoPopupWrapper";
+        wrapper.style.cssText = `
+            position:fixed;
+            inset:0;
+            background:rgba(0,0,0,0.8);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            z-index:99999999;
+        `;
+
+        const box = document.createElement("div");
+        box.style.cssText = `
+            position:relative;
+            width:70%;
+            max-width:800px;
+            background:#fff;
+            border-radius:8px;
+            overflow:hidden;
+        `;
+
+        const iframe = document.createElement("iframe");
+        iframe.src = "https://forms.zohopublic.com/theindusclub1/form/EnrollmentPopupForm/formperma/JV4s7ruE_zcRHkABoPtyd0g4k9uttOTSk4vmBeSMWOg?zf_rszfm=1";
+        iframe.style.cssText = "width:100%;height:600px;border:none;";
+
+        const closeBtn = document.createElement("div");
+        closeBtn.innerHTML = "×";
+        closeBtn.style.cssText = `
+            position:absolute;
+            top:10px;
+            right:15px;
+            font-size:28px;
+            cursor:pointer;
+        `;
+
+        function closePopup() {
+
+            popupOpen = false;
+
+            const timeOpen = (Date.now() - openTime) / 1000;
+
+            if (wrapper.parentNode) wrapper.remove();
+            document.body.style.overflow = "";
+
+            if (timeOpen >= 6) {
+                // If open more than 6 sec, stop permanently
+                localStorage.setItem("zohoPopupStopped", "true");
+                submitted = true;
+            } else {
+                // If closed quickly, show again later
+                startTimer();
+            }
+        }
+
+        closeBtn.onclick = closePopup;
+
+        wrapper.onclick = function(e){
+            if(e.target === wrapper){
+                closePopup();
+            }
+        };
+
+        box.appendChild(closeBtn);
+        box.appendChild(iframe);
+        wrapper.appendChild(box);
+
+        document.body.appendChild(wrapper);
+        document.body.style.overflow = "hidden";
+
+        if (timer) {
+            clearTimeout(timer);
+            timer = null;
+        }
+    }
+
+    window.addEventListener("load", function () {
+        if (!submitted) {
+            startTimer();
+        }
+    });
+
+})();
+</script>

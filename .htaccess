@@ -1,0 +1,4 @@
+RewriteEngine On 
+RewriteCond %{SERVER_PORT} 80
+RewriteCond %{HTTP_HOST} ^theindusclub\.com
+RewriteRule ^(.*)$ https://theindusclub.com/$1 [R,L]

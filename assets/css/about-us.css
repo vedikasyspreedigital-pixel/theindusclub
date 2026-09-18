@@ -1,0 +1,137 @@
+    .right-design {
+    position: absolute;
+    right: 0px;
+    top: 15rem;
+    z-index: -1;
+    background: url(../img/right-design.png) no-repeat fixed;
+    }    
+    .left-design {
+    position: absolute;
+    left: 0px;
+    top: 60rem;
+    z-index: -1;
+    }    
+    .bottom-design {
+    position: absolute;
+    }    
+    section {
+    color: #9F865E;
+    min-height: 100vh;
+    }    
+    .img-logo {
+    height: 80px;
+    margin: 20px auto;
+    }    
+    article {
+    margin: 4rem;
+    margin-bottom: 2rem;
+    }    
+    .banner-container {
+    margin: 15px;
+    background: #242d4a;
+    box-shadow: 0px 0px 30px 5px rgba(74, 74, 74, 0.25);
+    }    
+    .banner-details {
+    color: #9F865E;
+    padding: 5rem 1rem !important;
+    }    
+    .banner-page__title {
+    padding: 8em 5.5rem !important;
+    }    
+    .banner-page__title .txt-title {
+    font-size: 4rem;
+    }    
+    .banner-details p,
+    .about-txt p {
+    font-size: 1.8rem;
+    line-height: 3rem;
+    margin: auto;
+    }    
+    .about-txt {
+    padding: 0rem 14rem;
+    }    
+    .flex-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    }    
+    .flex-container>div {
+    background-color: #242d4a;
+    width: 45rem;
+    margin: 3rem;
+    text-align: center;
+    }    
+    .flex-container a,
+    .flex-container a:hover,
+    .flex-container a:focus {
+    color: #9F865E;
+    }    
+    figure {
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    }
+    .flex-container figure {
+    position: relative;
+    }    
+    figure img {
+    width: 100%;
+    }
+
+    .flex-container h3 {
+    background: #242d4a;
+    padding: 20px 0px;
+    font-size: 2rem;
+    }
+    @media only screen and (max-width: 425px) and (orientation: portrait) {
+    article {
+        margin: 30px 0;
+    }
+    .banner-container {
+        margin: 15px;
+    }
+    .flex-container>div {
+        margin: 3rem 2rem;
+    }
+    .banner-page__title {
+        text-align: center;
+    }
+    .banner-page__title .txt-title {
+        font-size: 3rem;
+    }
+    .about-txt {
+        padding: 0rem 2rem !important;
+    }
+    .about-txt p {
+        font-size: 1.6rem;
+        line-height: 2rem;
+    }
+    .img-logo {
+        height: 60px;
+    }
+    .right-design,
+    .left-design,
+    .right-design1,
+    .left-design1 {
+        height: 18rem;
+    }
+    .flex-container h3 {
+        font-size: 18px;
+    }
+    }    
+    @media only screen and (max-width: 768px) {
+    .banner-page__title,
+    .banner-details {
+        padding: 1.3em !important;
+    }
+    .about-txt {
+        padding: 1rem 5rem;
+    }
+    }    
+    @media only screen and (max-width: 1024px) {
+    .banner-page__title .txt-title br{
+        display: none;
+    }
+    }

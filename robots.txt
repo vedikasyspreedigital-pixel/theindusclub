@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# WordPress default/junk content under /campaign/ - keep out of the index
+Disallow: /campaign/uncategorized/
+Disallow: /campaign/category/
+Disallow: /campaign/*/feed/
+Disallow: /*?utm_source=
+Disallow: /*?utm_medium=
+Disallow: /*?utm_campaign=
+
+Sitemap: https://www.theindusclub.com/sitemap.xml
+Sitemap: https://www.theindusclub.com/campaign/wp-sitemap.xml

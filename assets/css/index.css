@@ -1,0 +1,553 @@
+body{
+    background: #0e1d39;
+}
+.no-webp body::before {
+    content: "";
+    background: url(../img/body-bg__Riviera.jpg) no-repeat fixed;
+    -webkit-background-size: cover; 
+    -moz-background-size: cover; 
+    -o-background-size: cover; 
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;   
+}
+.webp body::before {
+    content: "";
+    background: url(../img/body-bg__Riviera.webp) no-repeat fixed;
+    -webkit-background-size: cover; 
+    -moz-background-size: cover; 
+    -o-background-size: cover; 
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;   
+}
+.home-page
+{
+    margin-bottom: 35px;
+    margin-top: 30px;
+}
+.right-design {
+    position: absolute;
+    right: 0px;
+    top: 20%;
+    z-index: -1;
+    background: url(../img/right-design.png) no-repeat fixed;
+}
+
+.mainhomewrapper {
+    min-height: 97vh;
+}
+.img-logo {
+    height: 80px!important;
+    margin: 0 auto 0px auto;
+}
+/*article {
+    margin: 20px 0px;
+    margin-bottom: 2rem;
+}*/
+.banner-container {
+    margin: 15px;
+    box-shadow: 0px 0px 30px 5px rgba(74, 74, 74, 0.25);
+}
+/* Homepage-only: every inner page's own [page].css already sets
+   .banner-container's background (cream, matching its own banner card) --
+   index.css loads last on every page, so an unscoped background here would
+   silently override those and show navy behind the card instead. Scoping to
+   .home-page (the homepage's own container class) keeps this homepage-only. */
+.home-page .banner-container {
+    background: #1d3768;
+}
+.banner-details h3 {
+    line-height: 26px;
+    font-size: 19px;
+    font-weight: 600;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.testimonial_content p {padding: 0px 30px;line-height: 21px;font-size: 14px;position: relative;top: -4px;margin-bottom: 0px;}
+
+.testimonial_content h2 {
+    font-size: 18px;
+    color: #fff;
+    margin-top: 5px;
+    text-transform: uppercase;
+    background: linear-gradient(to bottom right, #715524 0%, #b3977a 100%);
+    background: -webkit-linear-gradient(to bottom right, #715524 0%, #b3977a 100%);
+    background: -moz-linear-gradient(to bottom right, #715524 0%, #b3977a 100%);
+    background: -ms-linear-gradient(to bottom right, #715524 0%, #b3977a 100%);
+    background: -o-linear-gradient(to bottom right, #715524 0%, #b3977a 100%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -ms-background-clip: text;
+    -o-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    -ms-text-fill-color: transparent;
+    -o-text-fill-color: transparent;
+}
+.banner-details {
+    color: #9F865E;
+    padding:8px !important;
+    background-color: #f6f6f6;
+}
+.banner-details h2{
+    font-size: 34px;
+}
+.banner-details p {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin: auto;
+    margin-bottom: 10px;
+    font-family: 'Walburn-Italic-2';
+    text-align: center;
+}
+.index__wb-footer{
+    position: absolute;
+    bottom: 0px;
+    left:0px;
+    width:100%;
+}
+.ball {
+  margin-top: 50px;
+  margin-left: -200px;
+  width: 120px;
+  height: 40px;
+  background-color: #EDE053;
+  border-radius: 20px;
+  transition: 1s;
+  line-height: 40px;
+  text-align: center;
+}
+wb-footer #return-to-bottom{
+    display: none !important;   
+}
+.about-txt p {
+    color: #9F865E;
+    font-size: 1.8rem;
+    line-height: 3rem;
+    margin: auto;
+}
+.about-txt {
+    padding: 0rem 12rem;
+}
+
+.know-more {
+    margin: 40px auto auto;;
+    text-align: center;
+}
+.know-more__btn{
+    background-color: #fff;
+    color: #715524;
+}
+
+.know-more__btn,
+.know-more__btn:focus {
+    color: #715524;
+    margin: auto;
+    border: 2px solid #9F865E;
+    padding: 10px;
+    font-size: 1.6rem;
+}
+.know-more__btn:hover {
+    color: #ffffff;
+    background-color: #242d4a;
+    border-color: #9F865E;
+    }
+@media only screen and (min-device-width: 375px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .index__wb-footer{
+        position: relative;
+    }
+}
+@media only screen and (max-width: 425px) and (orientation:portrait) {
+    .title-container p {
+        font-size: 10px;
+    }
+    article {
+        margin: 30px 0;
+    }
+    .banner-container {
+        margin: 15px;
+    }
+    .img-logo {
+        height: 80px;
+    }
+    .banner-details {
+        text-align: center;
+        padding: 10px 30px !important;
+        min-height: 100%;
+    }
+    .banner-details h1,
+    .banner-details h2{
+        font-size: 2rem !important;
+    }
+    .banner-details p {
+        font-size: 1.6rem;
+        line-height: 2rem;
+    }
+    .right-design,
+    .left-design,
+    .right-design1,
+    .left-design1 {
+        height: 18rem;
+    }
+    .about-txt {
+        padding: 0rem 2rem !important;
+    }
+    .about-txt p {
+        font-size: 1.6rem;
+        line-height: 2rem;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    .index__wb-footer{
+        position: relative;
+    }
+    .about-txt {
+        padding: 1rem 5rem;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .banner-details{
+        text-align: center;
+    }
+}
+@media only screen and (min-width: 1780px) {
+    .img-logo {
+        height: 150px;
+    }
+    .container-banner {
+        width: 75%;
+    }
+    .banner-details h2,
+    .banner-details h1{
+        font-size: 4.5rem;
+    }
+    .banner-details {
+        color: #9F865E;
+        
+    }
+    .banner-details p {
+         /*font-size: 1.6rem;
+        line-height: 2rem;*/
+        
+    }
+}
+@media only screen and (min-width: 2000px) {
+    .banner-details {
+         /*margin: 3% 0px 0px;*/
+    }
+    .banner-details p {
+       /* line-height: 3.5rem;*/
+    }
+}
+
+.register-page{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,0.45);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+z-index:9999;
+}
+
+
+
+
+.register-container{
+width:650px;
+max-width:90%;
+
+padding:45px;
+
+background:white;
+
+border-radius:8px;
+
+box-shadow:0 25px 60px rgba(0,0,0,0.35);
+
+animation:cardFade 0.4s ease;
+}
+
+
+
+
+@keyframes cardFade{
+from{
+transform:translateY(40px);
+opacity:0;
+}
+
+to{
+transform:translateY(0);
+opacity:1;
+}
+}
+
+.close-card{
+position:absolute;
+top:20px;
+right:25px;
+font-size:22px;
+cursor:pointer;
+color:#444;
+}
+
+
+.panel-close{
+position:absolute;
+top:12px;
+left:14px;
+font-size:18px;
+color:white;
+cursor:pointer;
+z-index:20;
+font-weight:300;
+}
+
+.panel-close:hover{
+opacity:0.7;
+}
+
+#membershipPanel{
+position:fixed;
+right:-320px;
+top:50%;
+transform: translateY(-50%);
+width:280px;
+background:#0b1f3a;
+padding:40px 25px;
+box-shadow:0 15px 40px rgba(0,0,0,0.2);
+transition:all 0.6s ease;
+z-index:9999;
+text-align:center;
+border-left:3px solid #c9a227;
+font-family: 'Georgia', serif;
+}
+
+#membershipPanel.show{
+right:0;
+}
+
+/* Dimmed backdrop behind the "Register Your Interest" slide-in panel.
+   The panel had no backdrop, so it just floated on top of whatever page
+   content was underneath (carousel captions on Business & Leisure/Design,
+   etc.), reading as an overlap rather than an intentional interruption.
+   This adds a scrim behind it (below the panel's own z-index:9999) whenever
+   it's open, without needing any JS changes. */
+body:has(#membershipPanel.show)::after{
+content:"";
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.5);
+z-index:9998;
+}
+
+.panel-logo img{
+width:160px;
+margin-bottom:80px;
+}
+
+#membershipPanel h2{
+font-size:26px;
+letter-spacing:3px;
+margin-bottom:10px;
+color:#FFFFF0;
+}
+
+#membershipPanel p{
+font-size:19px;
+margin-bottom:25px;
+color:#F7E7CE;
+}
+
+#membershipPanel button{
+padding:12px 18px;
+border:1px solid #888;
+background:transparent;
+font-size:13px;
+letter-spacing:1px;
+cursor:pointer;
+transition:all 0.3s ease;
+color:#FFFFF0;
+}
+
+#membershipPanel button:hover{
+background:black;
+color:white;
+border-color:black;
+}
+
+/*@media only screen and (min-width: 2300px) {
+    .banner-details {
+        margin: 2rem 0px 0px;
+    }
+    .banner-details {
+        color: #9F865E;
+        padding: 0px 50px 0px 20px !important;
+    }
+}*/
+
+/* ================= Unified site nav =================
+   Every page's header (header.html / header_index.html) now renders the
+   same self-contained markup used on events-and-experiences.html:
+   .nav > .nav-brand (logo) + .nav-menu > .nav-links + .nav-toggle.
+   This is the ONE nav implementation for the whole site -- desktop shows
+   the logo centered above a centered link row (matching the old two-row
+   look); at <=768px it switches to logo-left / hamburger-right with the
+   links collapsing into a frosted-glass dropdown, exactly like
+   events-and-experiences.html. Defined once here since index.css is the
+   one stylesheet every page loads last. */
+.nav{ position:relative; z-index:1000; padding:18px 0; }
+.nav .nav-inner{
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+}
+.nav-brand{ display:flex; align-items:center; justify-content:center; margin-bottom:14px; }
+.nav-brand a{ display:inline-block; }
+.nav-menu{ position:relative; display:flex; align-items:center; justify-content:center; }
+.nav-links{
+    display:flex; flex-wrap:wrap; justify-content:center;
+    gap:clamp(.6rem,1.6vw,1.5rem); list-style:none; margin:0; padding:0;
+}
+.nav-links li a{
+    font-family:'Walburn-Regular-2','Gotham','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight:300; font-size:14px; letter-spacing:1.5px; text-transform:uppercase;
+    color:rgba(244,241,236,0.75); white-space:nowrap; padding:8px 4px; position:relative;
+    display:inline-block; transition:color .3s ease;
+}
+.nav-links li a::after{
+    content:""; position:absolute; left:0; right:0; bottom:2px; height:1px;
+    background:linear-gradient(135deg,#84632a 0%,#c39957 55%,#bca48a 100%);
+    transform:scaleX(0); transform-origin:left; transition:transform .35s ease;
+}
+.nav-links li a:hover{ color:#fff; }
+.nav-links li a:hover::after{ transform:scaleX(1); }
+.nav-links li a.current{ color:#d7b87f; }
+.nav-links li a.current::after{ transform:scaleX(1); }
+.nav-toggle{
+    display:none; flex:none; width:40px; height:40px; border-radius:50%;
+    border:1px solid rgba(184,145,69,0.4); background:transparent; color:#f4f1ec;
+    align-items:center; justify-content:center; cursor:pointer; transition:background .3s ease;
+    /* Must stay above #membershipPanel (9999) and its backdrop (9998) so the
+       auto-opening Register Your Interest panel can never block clicks to it. */
+    z-index:10000; position:relative;
+}
+.nav-toggle:hover{ background:rgba(184,145,69,0.15); }
+.nav-toggle svg{ width:18px; height:18px; display:block; }
+
+@media only screen and (max-width:768px){
+    .nav{ padding:16px 0; }
+    /* Pin the logo to the true left edge and the hamburger to the true right
+       edge with absolute positioning rather than flex space-distribution --
+       this can't be thrown off by any flex-basis/content-width quirk, unlike
+       justify-content:space-between, which depends on both children reporting
+       an accurate shrink-to-fit width. */
+    .nav .nav-inner{
+        display:block; position:relative; min-height:80px; padding:0 20px;
+    }
+    .nav-brand{
+        position:absolute; left:20px; top:50%; transform:translateY(-50%);
+        margin-bottom:0; justify-content:flex-start; flex:none;
+    }
+    .nav-menu{ position:static; }
+    .nav-toggle{
+        display:flex; position:absolute; right:20px; top:50%; transform:translateY(-50%);
+    }
+    .nav-links{
+        display:none; position:absolute; top:calc(100% + 10px); left:12px; right:12px;
+        flex-direction:column; gap:0; max-height:80vh; overflow-y:auto;
+        padding:8px; border-radius:18px;
+        background:rgba(10,20,40,0.85);
+        -webkit-backdrop-filter:blur(20px) saturate(150%);
+        backdrop-filter:blur(20px) saturate(150%);
+        border:1px solid rgba(184,145,69,0.28);
+        box-shadow:0 20px 45px -18px rgba(0,0,0,0.7);
+        z-index:10000;
+    }
+    .nav-links.open{ display:flex; }
+    .nav-links li a{ display:block; padding:12px 14px; }
+    .nav-links li a::after{ display:none; }
+    .nav-links li a.current{ background:rgba(184,145,69,0.14); border-radius:8px; }
+}
+
+/* ================= Homepage footer, matching Events & Experiences =================
+   footer_index.html's markup was replaced with the same SVG-icon layout
+   used on every other page's footer; this overrides style_index.css's
+   older Font-Awesome-circle styling and absolute positioning (same overlap
+   risk as the header, see the header override above) to match. */
+footer { position: relative !important; padding: 0 !important; }
+.footer-bar {
+    padding: 1.8rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.footer-contact {
+    display: flex;
+    gap: 1.4rem;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: 'Walburn-Regular-2', 'Gotham', Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+}
+.footer-contact a {
+    display: flex;
+    align-items: center;
+    gap: .45rem;
+    color: #826a24;
+    transition: color .3s ease;
+}
+.footer-contact a:hover { color: #d7b87f; }
+.footer-contact svg { width: 15px; height: 15px; color: #826a24; }
+.footer-social { display: flex; gap: 15px; }
+.footer-social a {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: #242d4a;
+    transition: transform .3s ease;
+}
+.footer-social a:hover { transform: translateY(-2px); }
+.footer-social svg { width: 13px; height: 13px; }
+.footer-legal {
+    font-family: 'Walburn-Regular-2', 'Gotham', Helvetica, Arial, sans-serif;
+    font-size: 9.75px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+}
+.footer-legal a { color: #337ab7; }
+.footer-legal a:hover { text-decoration: underline; }
+@media only screen and (max-width: 640px) {
+    .footer-bar { flex-direction: column; align-items: flex-start; gap: 1.2rem; }
+}
