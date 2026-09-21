@@ -1,3 +1,5 @@
+@import url("./global.css");
+
 /* ================= Fonts ================= */
 @font-face{
   font-family:'Didot';
@@ -53,7 +55,9 @@ body{
   overflow-x:hidden;
 }
 img{ max-width:100%; display:block; }
-h1,h2,h3{ font-family:var(--serif); margin:0; }
+h1,h2,h3{ font-family:var(--serif); margin:0; text-transform:none; }
+body, p, a, li, button, input, textarea, select, .eyebrow, .lead-title, .lead-title-after, .about-quote, .facility-body p, .tier-card p, .register-intro, .register-lede, .register-contact-item, .footer-tagline, .footer-legal, .footer-copyright { text-transform:none; }
+.site-header .nav-links a, .nav-links a { text-transform:uppercase; }
 
 /* ================= .txt-gradient fix =================
    Several pages (Memberspeak, Partnerships and others) put headings/quotes

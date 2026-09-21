@@ -1,0 +1,103 @@
+:root {
+  --color-primary: #1d3768;
+  --color-primary-deep: #0e1d39;
+  --color-brand-gold: #c39957;
+  --color-brand-gold-deep: #84632a;
+  --color-brand-gold-soft: #d7b87f;
+  --color-ivory: #f6f1e7;
+  --color-surface: #ffffff;
+  --color-text: #1d3768;
+  --color-text-soft: #5b6577;
+  --color-border: rgba(15, 20, 30, 0.12);
+  --color-glass: rgba(255, 255, 255, 0.06);
+  --font-primary: "Gotham", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-accent: "Didot", "Times New Roman", Georgia, serif;
+  --container-max: 1320px;
+  --content-padding: clamp(1.25rem, 4vw, 3rem);
+  --section-spacing: clamp(2.5rem, 6vw, 5rem);
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --shadow-soft: 0 14px 34px rgba(15, 20, 30, 0.12);
+  --transition-base: 250ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.page-shell,
+.section-shell {
+  width: min(100%, var(--container-max));
+  margin-inline: auto;
+  padding-inline: var(--content-padding);
+}
+
+.section-stack {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: var(--color-text-soft);
+}
+
+.card-surface {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 0.9rem 1.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-brand-gold);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), opacity var(--transition-base);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #d4af37 0%, #f5d67b 100%);
+  color: var(--color-primary-deep);
+  box-shadow: 0 12px 28px rgba(212, 175, 55, 0.2);
+}
+
+.btn-secondary {
+  background: var(--color-surface);
+  color: var(--color-primary);
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  transform: translateY(-1px);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
