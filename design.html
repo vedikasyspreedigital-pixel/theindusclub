@@ -1743,40 +1743,101 @@
       <!-- INSPIRED BY STORIES — Warren Buffett room, day/night interactive swap -->
       <section class="pillar" id="stories">
         <div class="split">
-          <div class="split-media dn-swap reveal" data-thumbs>
-            <img
-              class="dn-day zoomable"
-              src="images/updated/warren-buffet-day.jpg"
-              alt="Warren Buffett room by day at The Indus Club, a boardroom with skyline views"
-            />
-            <img
-              class="dn-night zoomable"
-              src="images/updated/warren-buffet-night.jpg"
-              alt="Warren Buffett room by night at The Indus Club, transformed into a fine-dining setting"
-            />
-            <span class="dn-badge" aria-hidden="true">
+          <div class="split-media carousel reveal" data-carousel>
+            <div class="car-viewport">
+              <div class="car-track">
+                <div class="car-slide">
+                  <div
+                    class="car-slide-bg"
+                    style="
+                      background-image: url(&quot;images/updated/warren-buffet-day.jpg&quot;);
+                    "
+                  ></div>
+                  <img
+                    class="zoomable"
+                    src="images/updated/warren-buffet-day.jpg"
+                    alt="Warren Buffett room at The Indus Club, a boardroom with skyline views"
+                  />
+                </div>
+                <div class="car-slide">
+                  <div
+                    class="car-slide-bg"
+                    style="
+                      background-image: url(&quot;images/updated/michelin-private-dining.jpg&quot;);
+                    "
+                  ></div>
+                  <img
+                    class="zoomable"
+                    src="images/updated/michelin-private-dining.jpg"
+                    alt="Michelin private dining room at The Indus Club"
+                  />
+                </div>
+                <div class="car-slide">
+                  <div
+                    class="car-slide-bg"
+                    style="
+                      background-image: url(&quot;assets/img/about-us/Lindbergh__banner.png&quot;);
+                    "
+                  ></div>
+                  <img
+                    class="zoomable"
+                    src="assets/img/about-us/Lindbergh__banner.png"
+                    alt="Lindbergh room at The Indus Club"
+                  />
+                </div>
+                <div class="car-slide">
+                  <div
+                    class="car-slide-bg"
+                    style="
+                      background-image: url(&quot;images/Scorsese__banner.png&quot;);
+                    "
+                  ></div>
+                  <img
+                    class="zoomable"
+                    src="images/Scorsese__banner.png"
+                    alt="Scorsese room at The Indus Club, a cinematic setting for creative meetings"
+                  />
+                </div>
+                <div class="car-slide">
+                  <div
+                    class="car-slide-bg"
+                    style="
+                      background-image: url(&quot;assets/placeholder.svg&quot;);
+                    "
+                  ></div>
+                  <img
+                    class="zoomable"
+                    src="assets/placeholder.svg"
+                    alt="JRD room at The Indus Club, a tribute to the vision of J.R.D. Tata"
+                  />
+                </div>
+              </div>
+            </div>
+            <button class="car-btn car-prev" aria-label="Previous slide">
               <svg
-                class="icon-sun"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="1.7"
+                stroke-width="1.8"
               >
-                <circle cx="12" cy="12" r="4" />
-                <path
-                  d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
-                />
+                <path d="M15 18l-6-6 6-6" />
               </svg>
+            </button>
+            <button class="car-btn car-next" aria-label="Next slide">
               <svg
-                class="icon-moon"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="1.7"
+                stroke-width="1.8"
               >
-                <path d="M20 14.5A8 8 0 1110 4a6.5 6.5 0 0010 10.5z" />
+                <path d="M9 6l6 6-6 6" />
               </svg>
-            </span>
+            </button>
+            <div
+              class="car-dots"
+              role="tablist"
+              aria-label="The five signature rooms at The Indus Club"
+            ></div>
           </div>
           <div class="split-content reveal">
             <h2 class="txt-gold">

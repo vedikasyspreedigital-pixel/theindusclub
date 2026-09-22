@@ -590,6 +590,24 @@
       .intro-card:has(.jump-row) {
         text-align: left;
       }
+      /* the Accolades pull-quote card has its own short 2-link jump-row;
+         it should stay centered, unlike the multi-pill navigation rows
+         on other pages that the rule above is meant for */
+      .intro-card:has(.quote-mark) {
+        text-align: center;
+      }
+      .intro-card:has(.quote-mark) .jump-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.9rem;
+      }
+      .intro-card:has(.quote-mark) .jump-row a {
+        width: auto;
+        flex: 0 1 auto;
+        justify-content: center;
+        text-align: center;
+      }
       .intro-card + .intro-card {
         margin-top: clamp(1.5rem, 3vw, 2.5rem);
       }
@@ -607,6 +625,9 @@
       }
       .intro-card:has(.jump-row) .rule.center {
         margin-inline: 0;
+      }
+      .intro-card:has(.quote-mark) .rule.center {
+        margin-inline: auto;
       }
       .intro-card p {
         font-size: 1.02rem;
