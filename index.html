@@ -721,6 +721,9 @@
         border-radius: 10px;
         padding: clamp(1.6rem, 3.2vw, 2.6rem) clamp(1.6rem, 4vw, 3.5rem);
       }
+      .intro-card:has(.jump-row) {
+        text-align: left;
+      }
       .intro-card + .intro-card {
         margin-top: clamp(1.5rem, 3vw, 2.5rem);
       }
@@ -736,6 +739,9 @@
         margin-top: 14px;
         margin-bottom: 14px;
       }
+      .intro-card:has(.jump-row) .rule.center {
+        margin-inline: 0;
+      }
       .intro-card p {
         font-size: 1.02rem;
         line-height: 1.75;
@@ -746,32 +752,31 @@
       .intro-card p:last-of-type {
         margin-bottom: 0;
       }
-      /* flex-wrap so every row — full or partial — centers itself; a fixed-column-count grid
-     can't do this for a trailing row without fragile nth-child math tied to one specific
-     total and one specific breakpoint's column count */
+      /* equal-width grid so pills form a tidy left-aligned block; a trailing
+     partial row naturally starts at column 1 with no centering overrides
+     needed, unlike a center-aligned layout */
       .jump-row {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 0.2rem;
         margin-top: 2rem;
       }
       .jump-row a {
         display: flex;
+        width: 100%;
         height: 56px;
         align-items: center;
-        justify-content: center;
-        text-align: center;
-        flex: 0 1 auto;
+        justify-content: flex-start;
+        text-align: left;
       }
       @media (max-width: 760px) {
-        .jump-row a {
-          flex-basis: calc(50% - 0.1rem);
+        .jump-row {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
         }
       }
       @media (max-width: 480px) {
-        .jump-row a {
-          flex-basis: 100%;
+        .jump-row {
+          grid-template-columns: 1fr;
         }
       }
       .jump-row a {
