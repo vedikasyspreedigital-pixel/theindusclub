@@ -870,8 +870,10 @@
       }
       .split-content h2 {
         font-size: clamp(1.15rem, 2vw, 1.6rem);
-        line-height: 1;
-        margin-top: -0.15em;
+        /* 1.15, not 1, so the gradient background-clip has enough vertical
+           room to paint descenders (g/y/p) in full instead of cutting them off */
+        line-height: 1.15;
+        margin-top: -0.08em;
       }
       .split-content p {
         color: rgba(244, 241, 236, 0.8);
