@@ -311,7 +311,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="col-12">
                         <div class="thank-you-inner">
                             <div class="thank-you-logo">
-                                <img src="assets/img/logo-small.png" alt="logo">
+                                <img src="assets/img/logo-small.png" alt="The Indus Club logo">
                             </div>
                             <div class="thank-you-content text-center">
                                 <div class="thank-you-content1">

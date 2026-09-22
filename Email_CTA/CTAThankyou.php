@@ -155,7 +155,7 @@ f.parentNode.insertBefore(j,f);
   <div class="divider"></div>
 
   <div class="image-holder">
-    <img src="/assets/img/logo.jpg" alt="">
+    <img src="/assets/img/logo.jpg" alt="The Indus Club gallery image">
   </div>
 
 </div>
