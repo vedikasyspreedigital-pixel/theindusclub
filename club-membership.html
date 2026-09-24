@@ -1195,6 +1195,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        align-items: flex-start;
         gap: clamp(1rem, 2.5vw, 1.75rem);
         margin-top: clamp(1.5rem, 3vw, 2.5rem);
       }
@@ -1206,6 +1207,7 @@
       }
       .category-card h3 {
         font-size: clamp(1rem, 1.6vw, 1.2rem);
+        min-height: 4.2rem;
       }
       .category-card .rule {
         margin: 12px 0 14px;
@@ -1218,6 +1220,41 @@
       }
       .category-card p:last-child {
         margin-bottom: 0;
+      }
+      /* reserve enough room for the longest intro paragraph so every
+         card collapses to the same height regardless of its own
+         paragraph length */
+      .category-card > p:first-of-type {
+        min-height: 15.5rem;
+      }
+      .category-more {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+      }
+      .category-more p:last-child {
+        margin-bottom: 0;
+      }
+      .read-more-btn {
+        display: inline-block;
+        margin-top: 0.7rem;
+        background: none;
+        border: 0;
+        padding: 0;
+        cursor: pointer;
+        font-family: var(--font-head);
+        font-weight: 500;
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--gold-bright);
+        transition: color 0.3s ease;
+      }
+      .read-more-btn:hover {
+        color: #fff;
+      }
+      .category-card.open .read-more-btn {
+        margin-top: 0.9rem;
       }
 
       /* ---------- footer ---------- */
@@ -1738,14 +1775,17 @@
               directly invited by The Indus Club or referred by existing
               members.
             </p>
-            <p>
-              For an accomplished individual, membership can become a familiar
-              part of life in Mumbai: a destination for an important meeting, a
-              private dinner, a relaxed evening or an opportunity to encounter
-              people whose perspectives are formed by equally remarkable
-              journeys.The Indus Club is designed around life as it is actually
-              lived.
-            </p>
+            <div class="category-more">
+              <p>
+                For an accomplished individual, membership can become a familiar
+                part of life in Mumbai: a destination for an important meeting, a
+                private dinner, a relaxed evening or an opportunity to encounter
+                people whose perspectives are formed by equally remarkable
+                journeys.The Indus Club is designed around life as it is actually
+                lived.
+              </p>
+            </div>
+            <button class="read-more-btn" aria-expanded="false">Read More</button>
           </div>
           <div class="category-card glass-dark">
             <h3 class="txt-gold">Corporate Membership</h3>
@@ -1757,13 +1797,16 @@
               providing an environment designed for strategic networking and
               collaboration.
             </p>
-            <p>
-              The Indus Club's BKC location further strengthens this relevance.
-              For companies and leaders operating in and around BKC, the Indus
-              Club can become part of the geography of business relationships.
-              However, what happens inside ultimately gives membership its true
-              character.
-            </p>
+            <div class="category-more">
+              <p>
+                The Indus Club's BKC location further strengthens this relevance.
+                For companies and leaders operating in and around BKC, the Indus
+                Club can become part of the geography of business relationships.
+                However, what happens inside ultimately gives membership its true
+                character.
+              </p>
+            </div>
+            <button class="read-more-btn" aria-expanded="false">Read More</button>
           </div>
           <div class="category-card glass-dark">
             <h3 class="txt-gold">Overseas Membership</h3>
@@ -1774,33 +1817,38 @@
               connections, investments, and professional obligations often bring
               global citizens back to the city.
             </p>
-            <p>
-              When they return, the familiarity of a trusted club can offer
-              something a hotel or conventional hospitality venue cannot.
-              Overseas Membership is designed for individuals with permanent
-              residence outside Mumbai yet visit the city frequently for
-              business or leisure.
-            </p>
+            <div class="category-more">
+              <p>
+                When they return, the familiarity of a trusted club can offer
+                something a hotel or conventional hospitality venue cannot.
+                Overseas Membership is designed for individuals with permanent
+                residence outside Mumbai yet visit the city frequently for
+                business or leisure.
+              </p>
+            </div>
+            <button class="read-more-btn" aria-expanded="false">Read More</button>
           </div>
           <div class="category-card glass-dark">
             <h3 class="txt-gold">Next Gen Leaders Membership</h3>
             <hr class="rule" />
-            <p>Achievement no longer waits for age.</p>
             <p>
               Achievement no longer waits for age. Today's founders can build
               significant enterprises before 35. Young leaders can shape
               industries, influence culture and create businesses that transform
               markets within remarkably short periods.
             </p>
-            <p>
-              The Indus Club recognises this changing landscape through its Next
-              Gen Leaders category. Designed for individuals under 35 who have
-              already climbed the ladder of success as young leaders or
-              newsmakers, the membership creates an opportunity to become part
-              of a fraternity that spans generations and fields of
-              accomplishment, where the exchange between generations can be as
-              valuable as association within one.
-            </p>
+            <div class="category-more">
+              <p>
+                The Indus Club recognises this changing landscape through its Next
+                Gen Leaders category. Designed for individuals under 35 who have
+                already climbed the ladder of success as young leaders or
+                newsmakers, the membership creates an opportunity to become part
+                of a fraternity that spans generations and fields of
+                accomplishment, where the exchange between generations can be as
+                valuable as association within one.
+              </p>
+            </div>
+            <button class="read-more-btn" aria-expanded="false">Read More</button>
           </div>
           <div class="category-card glass-dark">
             <h3 class="txt-gold">Women Leaders Membership</h3>
@@ -1811,10 +1859,13 @@
               institutions, shaped industries and broken through boundaries that
               once appeared immovable.
             </p>
-            <p>
-              The Women Leaders category recognises those who have trailblazed
-              through their respective fields.
-            </p>
+            <div class="category-more">
+              <p>
+                The Women Leaders category recognises those who have trailblazed
+                through their respective fields.
+              </p>
+            </div>
+            <button class="read-more-btn" aria-expanded="false">Read More</button>
           </div>
         </div>
       </section>
@@ -2502,6 +2553,27 @@
           } else {
             item.classList.add("open");
             btn.setAttribute("aria-expanded", "true");
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        });
+      });
+
+      /* membership category cards: read more / read less */
+      document.querySelectorAll(".category-card").forEach(function (card) {
+        var btn = card.querySelector(".read-more-btn");
+        var panel = card.querySelector(".category-more");
+        if (!btn || !panel) return;
+        btn.addEventListener("click", function () {
+          var isOpen = card.classList.contains("open");
+          if (isOpen) {
+            card.classList.remove("open");
+            btn.setAttribute("aria-expanded", "false");
+            btn.textContent = "Read More";
+            panel.style.maxHeight = "";
+          } else {
+            card.classList.add("open");
+            btn.setAttribute("aria-expanded", "true");
+            btn.textContent = "Read Less";
             panel.style.maxHeight = panel.scrollHeight + "px";
           }
         });
